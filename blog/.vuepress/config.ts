@@ -1,7 +1,5 @@
 import { defineUserConfig } from 'vuepress'
-import { comment, hopeTheme } from "vuepress-theme-hope";
-import { searchProPlugin } from "vuepress-plugin-search-pro";
-import { docsearchPlugin } from "@vuepress/plugin-docsearch";
+import { hopeTheme } from "vuepress-theme-hope";
 import { searchPlugin } from "@vuepress/plugin-search";
 import { viteBundler } from '@vuepress/bundler-vite'
 
