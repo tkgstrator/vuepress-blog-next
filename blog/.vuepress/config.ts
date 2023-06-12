@@ -4,7 +4,7 @@ import { searchPlugin } from "@vuepress/plugin-search";
 import { viteBundler } from '@vuepress/bundler-vite'
 
 export default defineUserConfig({
-  lang: "en-US",
+  lang: "ja-JP",
   title: "えいむーと愉快な仲間たち",
   description: "洗ってないワンチャンの臭いがします",
   head: [
