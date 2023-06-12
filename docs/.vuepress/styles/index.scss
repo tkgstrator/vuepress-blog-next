@@ -1,0 +1,26 @@
+:root {
+  --font-family: 'Noto Sans JP', sans-serif;
+  --font-family-heading: 'Noto Sans JP', sans-serif;
+}
+
+@media (max-width: 719px) {
+  .vp-blog-hero {
+    height: 140px;
+  }
+}
+
+@media (min-width: 719px) {
+  .vp-blog-hero {
+    height: 240px;
+  }
+}
+
+.vp-article-list {
+  margin-top: 0;
+  padding-top: calc(var(--navbar-height));
+}
+
+.vp-page .vp-blog-info-wrapper {
+  margin-top: 0;
+  top: calc(var(--navbar-height) * 0.2)
+}
