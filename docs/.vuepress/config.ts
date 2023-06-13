@@ -62,7 +62,7 @@ export default defineUserConfig({
     blog: {
       sidebarDisplay: "none",
       articlePerPage: 5,
-      avatar: "/ico_ep2_01.png",
+      avatar: "/ico_ep2_01.webp",
       name: "えいむーと愉快な仲間たち",
       roundAvatar: true,
       medias: {
