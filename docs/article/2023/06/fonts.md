@@ -184,7 +184,23 @@ https://app.splatoon2.nintendo.net/fonts/bundled/eb82d017016045bf998cade4dac1ec2
 
 ユーザーが勝手にフォントをダウンロードしてくるのでアプリ自体にフォントをバンドルする必要はありません。
 
-この方式ができれば一番楽なのですが、さてこの方式を導入するに当たって難しい点を挙げると、
+|                     | シミュレータ | iPhone/iPad | 
+| :-----------------: | :----------: | :---------: | 
+| Use Installed Fonts | 不要         | 不要        | 
+| フォントの読み込み  | 可         | 可          | 
+| 設定画面表示        | あり         | あり        | 
+| Xcode設定        | あり        | あり        | 
+
+> アプリ自身がインストールしたフォントを利用する場合は`Use Installed Fonts`は不要だが、`Install Fonts`は必要でプロセスにインストールするだけであれば`Install Fonts`は不要
+
+|                         | Install Fonts Yes                        | Install Fonts No                             | 
+| :---------------------: | :--------------------------------------: | :------------------------------------------: | 
+| Use Installed Fonts Yes | 全て利用可                               | 他のアプリでインストールしたフォントが利用可 | 
+| Use Installed Fonts No  | アプリがインストールしたフォントは利用可 | .processのみ利用可                           | 
+
+なにやらややこしいのですが、とりあえずどちらもチェックを入れて損はないです。ただし、Install FontsをYesにするのであればバイナリに必ずフォントを同梱してください。
+
+この方式ができればめんどくさい構成プロファイルの作成が省略できて楽なのですが、この方式を導入するに当たって難しい点を挙げると、
 
 1. [Core Text Functions](https://developer.apple.com/documentation/coretext/core_text_functions)に関するドキュメントが少ない
 2. 起動時にフォントを読み込んで登録する必要がある
@@ -193,7 +209,8 @@ https://app.splatoon2.nintendo.net/fonts/bundled/eb82d017016045bf998cade4dac1ec2
 3. 同一のFamilyNameを持つフォントに対する読み込み方法がわからない
     - 同一のFamilyNameを持つフォントを登録しようとすると[`CTFontManagerError.duplicatedName`](https://developer.apple.com/documentation/coretext/ctfontmanagererror/duplicatedname)で普通に怒られます
 4. インストールダイアログがでない
-    - 本当に謎で、一回だけでたけどそれ以後音沙汰がないです
+    - 本当に謎で、端末リセット直後の一回だけでたけどそれ以後音沙汰がないです
+    - 複数同時にインストールしようとするとそうなるのかもしれない
 5. FamilyNameが異なるフォントがある
     - 後述します
 
@@ -209,7 +226,32 @@ SwiftUIでのフォントの読み込み方法を変えるか`CTFontManager`あ�
 
 ### インストールダイアログがでない問題
 
+何故か端末をリセットした最初の一回だけでます。
+
+`.process`でインストールした場合にはでてこないので、`.persistent`を指定する必要があると思います。
+
+まだ調査不足です。
+
 ### フォント関連のメソッド解説
+
+#### インストール
+
+- `CTFontManagerRegisterFontsForURL(CFURL, CTFontManagerScope, UnsafeMutablePointer<Unmanaged<CFError>?>?) -> Bool`
+    - 指定されたURLのフォントを指定されたパラメータで登録する
+    - `CTFontManagerScope=.process`以外は登録に失敗する
+- `CTFontManagerRegisterFontDescriptors(CFArray, CTFontManagerScope, Bool, ((CFArray, Bool) -> Bool)?)`
+    - 指定されたフォント一覧を指定されたパラメータで登録する
+    - `CTFontManagerScope=.persistent`以外は登録に失敗する
+- `CTFontManagerRegisterFontsWithAssetNames(CFArray, CFBungle, CTFontManagerScope, Bool)`
+    - 指定されたファミリーネーム一覧を指定されたパラメータで登録する
+    - `CTFontManagerScope=.persistent`以外は登録に失敗する
+
+#### アンインストール
+
+- `CTFontManagerUnregisterFontDescriptors(CFArray, CTFontManagerScope, ((CFArray, Bool) -> Bool)?)`
+    - 指定されたファミリーネーム一覧を指定されたパラメータで解除する
+
+#### 取得
 
 - `CTFontManagerCopyRegisteredFontDescriptors(CTFontManagerScope, Bool) -> CFArray`
     - 指定されたパラメータで登録されているすべてのフォントを取得して返す
@@ -217,21 +259,9 @@ SwiftUIでのフォントの読み込み方法を変えるか`CTFontManager`あ�
 - `CTFontDescriptorCopyAttribute(CTFontDescriptor, CFString) -> CFTypeRef?`
     - 指定されたフォントの指定されたパラメータを返す
     - フォントのパラメータ取得 
-- `CTFontManagerRegisterFontsForURL(CFURL, CTFontManagerScope, UnsafeMutablePointer<Unmanaged<CFError>?>?) -> Bool`
-    - 指定されたURLのフォントを指定されたパラメータで登録する
-    - インストール
-    - `CTFontManagerScope=.process`以外は登録に失敗する
-- `CTFontManagerRegisterFontDescriptors(CFArray, CTFontManagerScope, Bool, ((CFArray, Bool) -> Bool)?)`
-    - 指定されたフォント一覧を指定されたパラメータで登録する
-    - インストール 
-    - `CTFontManagerScope=.persistent`以外は登録に失敗する
-- `CTFontManagerRegisterFontsWithAssetNames(CFArray, CFBungle, CTFontManagerScope, Bool)`
-    - 指定されたファミリーネーム一覧を指定されたパラメータで登録する
-    - インストール 
-    - `CTFontManagerScope=.persistent`以外は登録に失敗する
-- `CTFontManagerUnregisterFontDescriptors(CFArray, CTFontManagerScope, ((CFArray, Bool) -> Bool)?)`
-    - 指定されたファミリーネーム一覧を指定されたパラメータで解除する
-    - アンインストール
+
+#### その他
+
 - `CTFontManagerSetAutoActivationSetting(CFString?, CTFontManagerAutoActivationSetting)`
     - 指定されたバンドルIDのフォントを自動でアクティベーションする
 
@@ -354,7 +384,7 @@ func CTFontManagerRegisterFontsWithAssetNames(
 ちょっとわかりにくいので少し解説。
 
 - fontAssetNames
-    - フォントのファイルのファイル名(拡張子不要)
+    - インストールしたいフォントのファイル名(拡張子不要)
 - bundle
     - 何も考えずに`CFBundleGetMainBundle()`を指定すれば良い。
 
@@ -362,9 +392,11 @@ func CTFontManagerRegisterFontsWithAssetNames(
 
 Xcodeはビルド時にアセットの階層構造が全てなくなるのでバンドルされているファイルを取得して指定されたファイル名のフォントを取ってきているようだ。
 
+> 端末リセット直後の初回インストール時のみダイアログが出現する。
+
 #### [CTFontManagerUnregisterFontDescriptors](https://developer.apple.com/documentation/coretext/3227900-ctfontmanagerunregisterfontdescr/)
 
-フォントマネージャを使ってフォントをアンインストールします。
+フォントマネージャを使ってフォントをアンインストールするメソッド。
 
 ```swift
 func CTFontManagerUnregisterFontDescriptors(
@@ -389,7 +421,7 @@ else {
 
 #### [CTFontManagerRegisterFontsForURL](https://developer.apple.com/documentation/coretext/1499468-ctfontmanagerregisterfontsforurl/)
 
-指定されたURLのフォントをインストールします。
+指定されたURLのフォントをインストールするメソッド。ただし、かなり限定的な使い方しかできない。
 
 ```swift
 func CTFontManagerRegisterFontsForURL(
@@ -410,7 +442,7 @@ URLを指定できるということはもちろん`Documents`からフォント
 
 ちなみにプロセス実行中しか効かないので、アプリを終了すればフォントは自動的に`unregistered`されます。
 
-よって、起動時に毎回インストールを実行する必要があります。
+よって、起動時に毎回インストールを実行する必要があります。やるなら`AppDelegate`で実行するのが良いかと思われる。
 
 `CTFontManagerSetAutoActivationSetting`を使えば自動でインストールするようにできるかもしれないけれど、まだ未調査です。
 
