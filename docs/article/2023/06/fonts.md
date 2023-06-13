@@ -240,7 +240,7 @@ Google Fontsなどを利用するのであればこの方法で良いかもし�
 
 SwiftUIでのフォントの読み込み方法を変えるか`CTFontManager`あたりを上手いことやる必要があると思うのですがいかんせんドキュメントが少なすぎて手探り感が半端ないです。
 
-### インストールダイアログがでない問題
+### ダイアログ問題
 
 何故か端末をリセットした最初の一回だけでます。
 
@@ -248,7 +248,7 @@ SwiftUIでのフォントの読み込み方法を変えるか`CTFontManager`あ�
 
 まだ調査不足です。
 
-### フォント関連のメソッド解説
+### フォント関連のメソッド
 
 #### インストール
 
@@ -383,7 +383,22 @@ func CTFontManagerRegisterFontDescriptors(
 )
 ```
 
-#### CTFontManagerRegisterFontsWithAssetNames
+#### [CTFontManagerRegisterFontURLs](https://developer.apple.com/documentation/coretext/3227897-ctfontmanagerregisterfonturls)
+
+```swift
+func CTFontManagerRegisterFontURLs(
+    _ fontURLs: CFArray,
+    _ scope: CTFontManagerScope,
+    _ enabled: Bool,
+    _ registrationHandler: ((CFArray, Bool) -> Bool)?
+)
+```
+
+フォントのURLを指定して一括でインストールするメソッド。便利なのに非推奨。
+
+`.persistent`と`.process`のどちらでも使えると思われるが、`.persistent`にしたいなら以下の`CTFontManagerRegisterFontsWithAssetNames`を利用するのが無難。
+
+#### [CTFontManagerRegisterFontsWithAssetNames]()
 
 `Assets.xcassets`に登録されているフォントをインストールする。
 
@@ -435,9 +450,23 @@ else {
 
 > なお、インストールされていないフォントをアンインストールしようとしても特にエラーはでません。
 
+#### [CTFontManagerUnregisterFontURLs](https://developer.apple.com/documentation/coretext/3227901-ctfontmanagerunregisterfonturls)
+
+```swift
+func CTFontManagerUnregisterFontURLs(
+    _ fontURLs: CFArray,
+    _ scope: CTFontManagerScope,
+    _ registrationHandler: ((CFArray, Bool) -> Bool)?
+)
+```
+
+指定されたURLのフォントを一括でアンインストールするメソッド。
+
+> インストールされてないフォントをアンインストールしようとするとエラーが返る。
+
 #### [CTFontManagerRegisterFontsForURL](https://developer.apple.com/documentation/coretext/1499468-ctfontmanagerregisterfontsforurl/)
 
-指定されたURLのフォントをインストールするメソッド。ただし、かなり限定的な使い方しかできない。
+指定されたURLのフォントをインストールするメソッド。
 
 ```swift
 func CTFontManagerRegisterFontsForURL(
@@ -480,3 +509,113 @@ func CTFontManagerCopyRegisteredFontDescriptors(
 先人の[記事](https://qiita.com/hcrane/items/a0a7a77f9d709e9692b6)に拠れば**Resource Tag**にも追加すると書いてあるが、これは結局ファイルの存在チェックにしか使えず、バンドルしているならフォントがあるのは当たり前の話であるし、バンドルしていないならそもそもResource Tagの値は設定できないので事実上やってもやらなくても良い設定になっています。
 
 現状、書かなくてもフォントはインストールできるので特にこの手順は不要かと思います。
+
+### 既存の問題を解消するために
+
+さて、一番の理想としてはフォントはどこかのサーバーからダウンロードしてきてそれを永続インストールしたいわけです。
+
+で、永続インストールするためには`.process`しか使えない`CTFontManagerRegisterFontsForURL`ではなく`.persistent`が利用できる`CTFontManagerRegisterFontsWithAssetNames`の方が便利です。
+
+1. `CTFontManagerRegisterFontsWithAssetNames`で`Documents`からインストールする
+2. `CTFontManagerRegisterFontURLs`で`Documents`からインストールする
+3. `CTFontManagerRegisterFontsForURL`を起動時に実行する
+
+ということで候補に上がるのはこの三つ。
+
+最初は2で終わりじゃないかと思っていたのですが、実行してみると以下のような[306エラー](https://developer.apple.com/documentation/coretext/ctfontmanagererror/invalidfilepath)が出ました。
+
+```
+Error Domain=com.apple.CoreText.CTFontManagerErrorDomain Code=306
+The file is not in an allowed location. It must be either in the application's bundle or an on-demand resource.
+```
+
+つまり、指定されたURLが良くなくて、バンドルかオンデマンドリソースにあるフォントを指定しろとあります。まあ確かに外部のへんてこなフォントをインストールできては困るので、これは仕方ないかもしれません。
+
+で、バンドルに含めるのは再三ダメだといってきたので残るはオンデマンドリソースになります。
+
+なんだこれとなったのですが、調べてみるとソシャゲとかでよくある「アプリインストール時には要らないけれど起動時にダウンロードされる追加コンテンツ」であることがわかりました。
+
+じゃあこれで解決かと思ったのですが、オンデマンドリソースはAppleのサーバーからか自分のサーバーからしかインストールすることができません。Appleのサーバーにファイルを置いておくのはバンドルしているのと変わりませんし、自分のサーバーであってもそれは同じことです。
+
+結局のところ「アプリが無条件に信頼しているところからしか`.persistent`としてフォントはインストールできないよ」ということになります。
+
+したがって1, 2の方式は無理だということがわかり、必然的に3の方式ということになります。
+
+#### [`CTFontManagerSetAutoActivationSetting`](https://developer.apple.com/documentation/coretext/1499481-ctfontmanagersetautoactivationse)で自動登録はできないのか
+
+無理です。
+
+macOS 10.6+以降しか対応してませんでした。よってiOSでは不可能です。
+
+#### 登録されたフォント情報を取得する
+
+[`CTFontManagerCopyAvailablePostScriptNames()`](https://developer.apple.com/documentation/coretext/1499516-ctfontmanagercopyavailablepostsc)と[`CTFontManagerCopyAvailableFontFamilyNames()`](https://developer.apple.com/documentation/coretext/1499494-ctfontmanagercopyavailablefontfa)でインストールされているフォントがとってこれるので取ってきます。
+
+`CTFontManagerCopyRegisteredFontDescriptors`でとってこれるんじゃないのと思ったのですが、取ってこれませんでした。
+
+> どうも設定のフォントのところに登録されているフォントしかとってこれないっぽい
+
+`.process`でインストールした場合はあそこに表示されないので仕方ないかなという気もします。
+
+```
+/// PostScriptNames
+[KurokaneStd-EB, RowdyStd-EB, Splatoon1, Splatoon2]
+/// FamilyNames
+[FOT-Kurokane Std EB, FOT-Rowdy Std EB, Splatoon1, Splatoon2]
+```
+
+で、取得した結果が上のような感じでした。この値はこれから使うことになるので覚えておきます。
+
+### スコープと利用可能なメソッド
+
+どれが使えてどれが使えないかがわかりにくいのでまとめました。
+
+| メソッド                                   | .persistent     | .process  | 
+| :----------------------------------------: | :-------------: | :-------: | 
+| CTFontManagerRegisterFontsForURL           |  -               | Documents | 
+| CTFontManagerRegisterFontURLs              |  -               | Documents | 
+| CTFontManagerRegisterFontsWithAssetNames   |  Assets.xcassets | -         | 
+| CTFontManagerUnregisterFontsForURL         |  -                | Documents | 
+| CTFontManagerUnregisterFontURLs            |  -                | Documents | 
+| CTFontManagerUnregisterFontDescriptors     |  Assets.xcassets | -         | 
+| CTFontManagerCopyRegisteredFontDescriptors |  OK              | NG        | 
+
+オンデマンドリソースを使わないのであれば`.persistent`はバンドルされた署名済みのフォントにしか使えません。`Documents`などのファイルを指定すると`CTFontManagerErrorDomain Code=306`が発生します。
+
+また、その逆でバンドルされたフォントを`.process`で登録することもできません。登録しようとすると`Invalid argument`が返ります。
+
+#### バンドルされたフォント
+
+バンドルしているならフォントの情報は全てわかっているはずなので何も考えずにインストールでは`CTFontManagerRegisterFontsWithAssetNames`を使っておいて、アンインストールするときには`CTFontManagerUnregisterFontDescriptors`と`CTFontManagerCopyRegisteredFontDescriptors`を組み合わせて利用すると良いでしょう。
+
+> `CTFontManagerCopyRegisteredFontDescriptors`は`.persistent`でインストールされたフォントしか取ってこれないので`.process`でインストールしたフォントはこの方法ではアンインストールできません
+
+#### 取得したフォント
+
+外部から取得したフォントは署名がないのでシステムにインストールすることはできません。
+
+| メソッド                                   | .persistent     | .process  | 
+| :----------------------------------------: | :-------------: | :-------: | 
+| CTFontManagerRegisterFontsForURL           |  -               | Documents | 
+| CTFontManagerRegisterFontURLs              |  -               | Documents | 
+| CTFontManagerUnregisterFontsForURL         |  -                | Documents | 
+| CTFontManagerUnregisterFontURLs            |  -                | Documents | 
+
+よって、インストールとアンインストールは上の四つのメソッドを使うことになります。何も考えずに`FileManager.default`とかでURLを取得して`[CFURL]`を経由して`CFArray`に渡すだけ、難しいところもないです。
+
+`CTFontManagerRegisterFontURLs`は`CTFontManagerRegisterFontsForURL`の完全上位互換です。
+
+### フォントのマージ
+
+そしていちばん大事なところがここ、フォントのマージができるのかどうか。
+
+ここまでいろいろ書いてきましたが、結局それらは理解を深めるために書いてきただけで、ここのマージができないと何の解決にもなりません。
+
+調べたところ、二つのFontDescriptorsをマージするようなメソッドはありませんでした。
+
+とりあえず以下のドキュメントがそれっぽそうなので擦り切れるまで読んでみます。それでも分からなかったらTHE ENDっていうことで。
+
+- [CTFontManagerCreateFontDescriptorFromData](https://developer.apple.com/documentation/coretext/1499509-ctfontmanagercreatefontdescripto)
+- [CTFontManagerCreateFontDescriptorsFromURL](https://developer.apple.com/documentation/coretext/1499500-ctfontmanagercreatefontdescripto)
+- [CTFontManagerCreateFontDescriptorsFromData](https://developer.apple.com/documentation/coretext/3333254-ctfontmanagercreatefontdescripto)
+- [CTFontCopyNameForGlyph](https://developer.apple.com/documentation/coretext/3612048-ctfontcopynameforglyph)
