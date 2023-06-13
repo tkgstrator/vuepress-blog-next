@@ -1,7 +1,7 @@
 ---
 layout: BlogHome
 home: true
-bgImage: header.jpeg
+bgImage: header.webp
 heroText: false
 heroFullScreen: false
 # heroImage: header.jpeg
