@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "deploy": "yarn wrangler pages publish docs/.vuepress/dist",
+    "deploy": "yarn wrangler pages deploy docs/.vuepress/dist",
     "predeploy": "yarn build"
   },
   "devDependencies": {
