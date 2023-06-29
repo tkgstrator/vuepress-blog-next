@@ -613,9 +613,127 @@ macOS 10.6+以降しか対応してませんでした。よってiOSでは不可
 
 調べたところ、二つのFontDescriptorsをマージするようなメソッドはありませんでした。
 
-とりあえず以下のドキュメントがそれっぽそうなので擦り切れるまで読んでみます。それでも分からなかったらTHE ENDっていうことで。
+> と思っていたところ、[大変有益な記事](https://speakerdeck.com/satoshin21/uifontdescriptor)を見つけてしまった......
 
-- [CTFontManagerCreateFontDescriptorFromData](https://developer.apple.com/documentation/coretext/1499509-ctfontmanagercreatefontdescripto)
-- [CTFontManagerCreateFontDescriptorsFromURL](https://developer.apple.com/documentation/coretext/1499500-ctfontmanagercreatefontdescripto)
-- [CTFontManagerCreateFontDescriptorsFromData](https://developer.apple.com/documentation/coretext/3333254-ctfontmanagercreatefontdescripto)
-- [CTFontCopyNameForGlyph](https://developer.apple.com/documentation/coretext/3612048-ctfontcopynameforglyph)
+なんとカスケードフォントというものを利用することで「英語のときはこのフォントA、日本語のときはフォントBで表示したい」という要望を叶えることができると書いてある。
+
+え、これ勝ったのでは？？？
+
+#### [UIFontDescriptor](https://developer.apple.com/documentation/uikit/uifontdescriptor)
+
+現段階ではまだ`CTFontDescriptor`という型なのでこれを変換します。ただし、継承クラスなので無条件に成功します。
+
+`UIFontDescriptor`はそのまま`UIFont`に突っ込めて、`UIFont`はそのままSwiftUIの`Font`に突っ込めるので逆順に追うと以下のような流れになるわけです。
+
+```
+11. URL -> as
+10. CFURL -> CTFontManagerCreateFontDescriptorsFromURL()
+9. CFArray? -> unwrap
+8. CFArray -> as?
+7. [CTFontDescriptor]? -> unwrap
+6. [CTFontDescriptor] -> first
+5. CTFontDescriptor? -> unwrap
+4. CTFontDescriptor -> as
+3. UIFontDescriptor -> init
+2. UIFont (UIKit) -> init
+1. Font (SwiftUI)
+```
+
+ということでアンラップも含めれば11段階遡ることでURLからSwiftUIで利用できるFontまで繋げられることがわかりました。
+
+このとき`UIFontDescriptor`に対して適切にカスケードフォントを設定することで一つのフォントファミリーでSplatfont1とSplatfont2に対応できるはずです。
+
+では、そのコードを書いていきましょう。
+
+## SwiftUIでの実装
+
+上の例ではスプラ2向けのフォントを利用していましたが、スプラ3では中国語と韓国語に対応しなければいけないので最初かrあらこちらで実装します。
+
+### フォント
+
+```
+Splatoon1-common.3b7ce8b3c19f74921f51.woff2
+Splatoon1-symbol-common.38ddb9a11cb1f225e092.woff2
+Splatoon1-cjk-common.62441e2d3263b7141ca0.woff2
+Splatoon1JP-hiragana-katakana.7650dccc9af86f19f094.woff2
+Splatoon1JP-level1.fafc97f04a568e26ba52.woff2
+Splatoon1JP-level2.225bb1db5962c9d61773.woff2
+Splatoon1KRko-level1.a94dd3748648749f4583.woff2
+Splatoon1KRko-level2.fcce77dce5655afed7d2.woff2
+Splatoon1CHzh-level1.6b6af277c3dc45a8cf10.woff2
+Splatoon1CHzh-level2.a24ca5d538d0b6a0d086.woff2
+Splatoon1TWzh-level1.e991c1b3c2084df56d18.woff2
+Splatoon1TWzh-level2.054b111fb7118a083ff7.woff2
+```
+
+フォントは全部で12種類で共通のフォントが3つあります。
+
+| 言語   | フォント | 合計 | 
+| :----: | :------: | :--: | 
+| Common | 4        | -    | 
+| JP     | 3        | 7    | 
+| KO     | 2        | 6    | 
+| CH     | 2        | 6    | 
+| TW     | 2        | 6    | 
+
+共通のフォントはプレイヤー名につけられる文字なので「記号・シンボル・ひらがな・かたかな・英語」です。
+
+これらが含まれるのが上から四つのフォントファイルなのでこれらは必ず含む必要があります。なので日本語でも韓国語でも中国語でもなければフォントファイルは四つマージするだけで良いのですが、どうせなら日本語を突っ込めばいいので日本語とそれ以外で分けてしまうのが良いです。
+
+```swift
+enum Splatfont1: String, CaseIterable {
+    case Splatoon1Common                = "3b7ce8b3c19f74921f51"
+    case Splatoon1SymbolCommon          = "38ddb9a11cb1f225e092"
+    case Splatoon1CjkCommon             = "62441e2d3263b7141ca0"
+    case Splatoon1JPHiraganaKatakana    = "7650dccc9af86f19f094"
+    case Splatoon1JPLevel1              = "fafc97f04a568e26ba52"
+    case Splatoon1JPLevel2              = "225bb1db5962c9d61773"
+    case Splatoon1KRkoLevel1            = "a94dd3748648749f4583"
+    case Splatoon1KRkoLevel2            = "fcce77dce5655afed7d2"
+    case Splatoon1CHzhLevel1            = "6b6af277c3dc45a8cf10"
+    case Splatoon1CHzhLevel2            = "a24ca5d538d0b6a0d086"
+    case Splatoon1TWzhLevel1            = "e991c1b3c2084df56d18"
+    case Splatoon1TWzhLevel2            = "054b111fb7118a083ff7"
+}
+```
+
+フォントはハッシュで区別できるのでしてしまいましょう。
+
+これに対し、フォントをマージして`UIFontDescriptor`として返すメソッドを定義します。
+
+> `UIFont`を返してしまうとフォントのサイズの変更ができなくなるので注意
+
+```swift
+extension Splatfont1 {
+    /// SplatNet3のURL
+    var baseURL: URL {
+        URL(string: "https://api.lp1.av5ja.srv.nintendo.net/static/media")
+    }
+
+    /// フォントのURL
+    /// 必ず存在するので強制アンラップしても問題ない
+    var fontURL: CFURL {
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            .appendingPathComponent("static/media", conformingTo: .url)
+            .appendingPathComponent(rawValue, conformingTo: .url)
+            .appendingPathExtension("woff2") as CFURL
+    }
+
+    /// EnumからUIFontDescriptorを読み込む
+    var fontDescriptor: UIFontDescriptor? {
+        guard let array: CFArray = CTFontManagerCreateFontDescriptorsFromURL(self.fontURL),
+              let fonts: [CTFontDescriptor] = array as? [CTFontDescriptor],
+              let font: CTFontDescriptor = fonts.first
+        else {
+            return nil
+        }
+        return font as UIFontDescriptor
+    }
+
+    static let splatfont1jpja: UIFontDescriptor {
+        [
+            
+        ]
+    }
+}
+```
