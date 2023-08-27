@@ -101,13 +101,14 @@ iOS向けは現在100%Swiftというプログラミング言語で書かれて�
 
 めんどくさいのが嫌いなので簡潔に書きます。質問があればリプライやDMなどでよろしくお願いします。
 
-- [PayPal](https://paypal.me/salmonia?country.x=JP&locale.x=ja_JP)
-- [PayPay](https://qr.paypay.ne.jp/p2p01_4Jb7G6mdMjI4SJtx)
-
-> 未達の場合でも返金はできないのでご了承ください
+> 目標金額未達の場合でも返金はできないのでご了承ください
+>
+> メッセージ等が記入可能な場合はTwitterのIDなどを記載していただけると助かります
 
 #### 500円プラン
 
+- 参加
+    - [PayPay](https://qr.paypay.ne.jp/p2p01_illPMuc0dmayTPvz)
 - リターン
     - 目標金額到達の場合にアプリ提供[1]
 - デメリット
@@ -115,6 +116,9 @@ iOS向けは現在100%Swiftというプログラミング言語で書かれて�
 
 #### 1000円プラン
 
+- 参加
+    - [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=M9D54GH8WNBQL)
+    - [PayPay](https://qr.paypay.ne.jp/p2p01_tAxMBqo0FROqDWzM)
 - リターン
     - 目標金額到達の場合にアプリ提供[1]
     - ソースコード公開[2]
@@ -123,6 +127,9 @@ iOS向けは現在100%Swiftというプログラミング言語で書かれて�
 　
 #### 2000円プラン
 
+- 参加
+    - [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=J5H7E4WBKVLWQ)
+    - [PayPay](https://qr.paypay.ne.jp/p2p01_MXQyUFOAUo99PCO7)
 - リターン
     - 目標金額到達の場合にアプリ提供[1]
     - ソースコード公開[2]
@@ -132,6 +139,9 @@ iOS向けは現在100%Swiftというプログラミング言語で書かれて�
 
 #### 3000円プラン
 
+- 参加
+    - [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KSS3S8H6XHH48)
+    - [PayPay](https://qr.paypay.ne.jp/p2p01_illPMuc0dmayTPvz)
 - リターン
     - 目標金額到達の場合にアプリ提供[1]
     - ソースコード公開[2]
@@ -150,6 +160,13 @@ iOS向けは現在100%Swiftというプログラミング言語で書かれて�
 > 可能な限り対応しますが、保証はできません
 >
 > [4] 多分、個人の趣味で基本部分は完成させるのでそこまで完成した際に目標金額に達していなくてもアプリをお渡しします
+
+#### 任意の金額
+
+- [PayPay](https://qr.paypay.ne.jp/p2p01_4Jb7G6mdMjI4SJtx)
+- [PayPal.Me](https://paypal.me/salmonia?country.x=JP&locale.x=ja_JP)
+
+> PayPal.Meの場合はTwitterのIDを記載していただけると、誰からご支援を頂いたかわかりやすくて助かります.
 
 ## 最後に
 
