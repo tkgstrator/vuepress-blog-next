@@ -1,0 +1,45 @@
+name: Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - 'master'
+  
+jobs:
+  publish:
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      - name: Cache CDK Dependencies
+        uses: actions/cache@v3
+        id: cache_cdk_dependency_id
+        env:
+          cache-name: cache-cdk-dependency
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
+          restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-
+      
+      - name: Install Dependencies
+        if: ${{ steps.cache_cdk_dependency_id.outputs.cache-hit != 'true' }}
+        run: yarn install
+      
+      - name: Build
+        run: yarn build 
+      
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          projectName: tkgstrator-work-blog
+          directory: docs/.vuepress/dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
