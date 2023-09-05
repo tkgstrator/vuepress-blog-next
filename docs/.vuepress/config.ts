@@ -37,13 +37,13 @@ export default defineUserConfig({
     hostname: "https://tkgstrator.work",
     plugins: {
       copyCode: {
-        showInMobile: true
+        showInMobile: false
       },
       feed: {
         json: true
       },
       seo: true,
-      pwa: true,
+      pwa: false,
       blog: {
         article: "/article",
         category: "/category",
