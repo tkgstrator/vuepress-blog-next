@@ -30,17 +30,29 @@ IPAファイルを抜き出すには脱獄できるiOSデバイスが必須と�
 
 ### Palera1n
 
+
+#### [Rootless](https://ios.cfw.guide/installing-palera1n/)
+
+[バイナリ](https://github.com/palera1n/palera1n/releases)が別にあるのでダウンロードします。
+
+macOSユーザーであれば`palera1n-macos-universal`を使っておけば良いとのこと。
+
 ```zsh
 sudo /bin/sh -c "$(curl -fsSL https://static.palera.in/scripts/install.sh)"
 ```
-
-#### [Rootless](https://ios.cfw.guide/installing-palera1n/)
 
 俗に言うRootless脱獄で、その名の通りroot権限を持たないものになります。
 
 こちらは必要ではないので今回は紹介しません。
 
 #### [Rootful](https://ios.cfw.guide/archived-palera1n-rootful/)
+
+```zsh
+sudo mkdir -p /usr/local/bin
+sudo mv ~/Download/palera1n-macos-universal /usr/local/bin/palera1n
+sudo xattr -c /usr/local/bin/palera1n
+sudo chmod +x /usr/local/bin/palera1n
+```
 
 従来の脱獄でroot権限を持ちます。IPAをぶっこ抜くにはメモリにアクセスする必要があるのでこちらの脱獄が必要になります。
 
@@ -88,6 +100,14 @@ palera1n -f
 
 これで、端末側での操作は終了です
 
+### rootのパスワード変更
+
+[https://repo.chariz.com](sileo://source/https://repo.chariz.com)のレポジトリをSileoから登録します。
+
+登録したらNewTerm 3をインストールします。
+
+> gettext-localizationsがインストールされていないと`Session Ended`という謎エラーが返ってくるので対応しましょう。
+
 ## macOSでの環境構築
 
 - frida-tools
@@ -131,19 +151,17 @@ IPAを抜き出すためのコードはいろいろあるのですが、動か�
 ```zsh
 git clone https://github.com/AloneMonkey/frida-ios-dump
 cd frida-ios-dump
-sudo pip install -r requirements.txt --upgrade
+pip install -r requirements.txt --upgrade
 ```
-
-なんで`sudo`権限が必要なのかわからないのですが、とりあえずこれで動きます。
 
 #### 使い方
 
-`./dump.py -l`でインストールされているアプリの一覧が見れます。
+`python dump.py -l`でインストールされているアプリの一覧が見れます。
 
 今回はチュートリアルに習ってVLCのIPAを取得したいと思います。
 
 ```zsh
-$ ./dump.py -l                  
+$ pyhton dump.py -l                  
  PID  Name                    Identifier                   
 ----  ----------------------  -----------------------------
 1783  Settings                com.apple.Preferences        
@@ -199,7 +217,7 @@ $ ./dump.py -l
 その場合は以下のようにコマンドを入力します。
 
 ```zsh
-$ ./dump.py org.videolan.vlc-ios         
+$ python dump.py org.videolan.vlc-ios         
 Start the target app org.videolan.vlc-ios
 Dumping VLC to /var/folders/85/mp1chg8s0sv20nlz6x6yyvg80000gn/T
 [frida-ios-dump]: Load VLCMediaLibraryKit.framework success. 

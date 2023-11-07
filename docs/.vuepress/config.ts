@@ -6,7 +6,8 @@ import { viteBundler } from '@vuepress/bundler-vite'
 export default defineUserConfig({
   lang: "en-US",
   title: "えいむーと愉快な仲間たち",
-  description: "洗ってないワンチャンの臭いがします",
+  description: "洗ってないワンちゃんの臭いがします",
+  port: 3000,
   head: [
     [
       "link",
@@ -74,7 +75,8 @@ export default defineUserConfig({
     }
   }),
   bundler: viteBundler({
-    viteOptions: {},
+    viteOptions: {
+    },
     vuePluginOptions: {},
   }),
 });
