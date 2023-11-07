@@ -106,7 +106,13 @@ palera1n -f
 
 登録したらNewTerm 3をインストールします。
 
-> gettext-localizationsがインストールされていないと`Session Ended`という謎エラーが返ってくるので対応しましょう。
+> gettext-localizationsがインストールされていないと`Session Ended`という謎エラーが返ってくるのでこちらもインストールしましょう。
+
+NewTerm 3を起動したら以下のコマンドを入力してrootのパスワードを変更します。
+
+```zsh
+sudo passwd root
+```
 
 ## macOSでの環境構築
 
