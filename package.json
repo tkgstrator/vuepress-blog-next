@@ -10,11 +10,16 @@
     "deploy": "yarn wrangler pages deploy docs/.vuepress/dist",
     "predeploy": "yarn build"
   },
+  "engines": {
+    "node": ">=18.0.0",
+    "yarn": ">=2.0"
+  },
   "devDependencies": {
-    "@vuepress/bundler-vite": "^2.0.0-beta.63",
-    "@vuepress/plugin-search": "^2.0.0-beta.63",
-    "vuepress": "^2.0.0-beta.63",
-    "vuepress-theme-hope": "^2.0.0-beta.224",
+    "@vue/server-renderer": "^3.3.8",
+    "@vuepress/bundler-vite": "2.0.0-rc.0",
+    "@vuepress/plugin-search": "2.0.0-rc.0",
+    "vuepress": "2.0.0-rc.0",
+    "vuepress-theme-hope": "2.0.0-rc.0",
     "wrangler": "^3.1.0"
   }
 }
