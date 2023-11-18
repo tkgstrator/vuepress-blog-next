@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Yarn
-        run: npm install -g yarn
+        run: npm install -g yarn@2
 
       - name: Cache CDK Dependencies
         uses: actions/cache@v3
