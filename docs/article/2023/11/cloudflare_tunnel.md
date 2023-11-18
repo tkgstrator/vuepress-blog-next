@@ -1,6 +1,6 @@
 ---
 title: Cloudflare Tunnelでもっと簡単にサーバーを立てよう
-date: 2023-11-16
+date: 2023-11-17
 description: いままではnginx proxyを利用していましたが、それすらも不要なことがわかったのでそれについて解説 
 ---
 
