@@ -50,8 +50,6 @@ tag:
 |   Enter    |    -     |       OK       |
 |   Wrong    |    -     |       OK       |
 
-![](/assets/images/biometricsflowchart01.png)
-
 ### isBiometricsAvailable
 
 生体認証が可能かどうかは`canEvaluatePolicy`で簡単に取得できる。

@@ -455,4 +455,4 @@ var body: some View {
 > なんとアップデートでできるようになっていました。
 > [RealmCocoa が SwiftUI に正式対応してるっぽい](https://tkgstrator.work/posts/2021/08/05/realmcocoa.html)
 
-<Amazon/>
+

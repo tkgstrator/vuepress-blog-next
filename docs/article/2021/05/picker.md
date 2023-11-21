@@ -105,4 +105,4 @@ iOS 向けの Style は以下の三つが使えるが、`DefaultButtonStyle`以�
 |  DefaultButtonStyle   | 発生しない |
 | BorderlessButtonStyle |    発生    |
 
-<Amazon/>
+

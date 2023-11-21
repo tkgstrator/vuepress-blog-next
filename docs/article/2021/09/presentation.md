@@ -19,7 +19,7 @@ tag:
 |      閉じ方      | 画面外タップなど | 専用のボタンが必須 | 画面外タップなど |
 |     サポート     |      iOS13       |       iOS14        |     SwiftyUI     |
 
-<Amazon />
+
 
 ## ModalWindow を複数用意するときの注意
 
@@ -354,4 +354,4 @@ extension EnvironmentValues {
 
 記事は以上。
 
-<Amazon />
+

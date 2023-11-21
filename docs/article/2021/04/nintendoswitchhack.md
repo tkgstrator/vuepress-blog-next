@@ -66,7 +66,7 @@ RCM に入るためには特定のピンをショートさせる必要がある�
 
 すごく便利なのでこれは持っておいたほうがいいと思います。
 
-<Amazon/>
+
 
 ### [hekate](https://github.com/CTCaer/hekate)
 

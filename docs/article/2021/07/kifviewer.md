@@ -174,4 +174,4 @@ module.exports = {
 
 ###
 
-<Amazon/>
+

@@ -13,7 +13,7 @@ tag:
 
 Swift における Identifiable とは要するに識別可能で、データが重複しないことを保証するためのプロパティである。
 
-<Amazon />
+
 
 ## ForEach
 
@@ -368,4 +368,4 @@ enum APPError: Int, Error, CaseIterable, Identifiable {
 
 型自体は何でも良いので、とりあえず型付き Enum にしてやれば問題は解決します。
 
-<Amazon />
+

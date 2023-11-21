@@ -53,4 +53,4 @@ struct ContactsView: View {
 
 しかもこれ、便利なことに`persons`に対して`filter`などを書けても正しく動作する。便利すぎる！！！
 
-<Amazon/>
+

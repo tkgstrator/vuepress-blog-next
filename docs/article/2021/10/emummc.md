@@ -151,8 +151,6 @@ SD カードを EmuNAND 用にフォーマットしてくれる便利なペイ�
 
 ダウンロードした DeepSea を解凍してそのまま SD カードにコピーするだけです。
 
-![](images/image-9.png)
-
 必須ではありませんが、`bootloader/hekate_ipl.ini`を以下のように編集して CFW(SysNAND)を無効化しておくと幸せになれます。
 
 ```ini

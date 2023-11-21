@@ -54,8 +54,6 @@ UDID は Mac であればデバイスを繋いでからデバイス名の下の�
 
 Windows であれば iTunes で繋いで調べることができます、多分。
 
-![](/assets/images/11.png)
-
 登録デバイスが増えたときはここからやり直す必要があります。
 
 ### Provisioning Profile のダウンロード
