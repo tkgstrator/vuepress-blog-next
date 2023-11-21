@@ -2,6 +2,10 @@
 title: GitHub Packagesを使わずにプライベートパッケージを公開するまでの手順
 date: 2023-03-27
 description: GitHub Packagesすらもめんどくさい方向けのチュートリアルです
+category:
+  - Tech
+tag:
+  - GitHub
 ---
 
 ## 背景

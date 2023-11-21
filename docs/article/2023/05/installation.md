@@ -1,10 +1,14 @@
 ---
-title: Macを初期化して最初にやったこと 
+title: Macを初期化して最初にやったこと
 date: 2023-05-31
-description: Macを初期化してやったことまとめ 
+description: Macを初期化してやったことまとめ
+category:
+  - Tech
+tag:
+  - macOS
 ---
 
-## Mac Studioを初期化した
+## Mac Studio を初期化した
 
 一年以上同じ環境を使い続けてきてめんどくさくなったので心機一転しました。
 
@@ -12,16 +16,15 @@ description: Macを初期化してやったことまとめ
 
 ### [Google Chrome](https://www.google.com/chrome/)
 
-必須。Safariの最初で最後の仕事。
-
+必須。Safari の最初で最後の仕事。
 
 ### [Google IME](https://www.google.co.jp/ime/)
 
-必須。Google Chrome最初の仕事。
+必須。Google Chrome 最初の仕事。
 
 ### [Xcodes](https://www.xcodes.app/)
 
-いろんなバージョンのXcodeをインストールできる優れもの。
+いろんなバージョンの Xcode をインストールできる優れもの。
 
 ### [VScode](https://code.visualstudio.com/)
 
@@ -31,16 +34,15 @@ description: Macを初期化してやったことまとめ
 
 ターミナル補助。コマンドとかを表示してくれて助かります。
 
-
 ### [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
 もはや必須。
 
 ### [Sourcetree](https://www.sourcetreeapp.com/)
 
-Gitクライアントです、基本的に便利。
+Git クライアントです、基本的に便利。
 
-[バグ](https://qiita.com/katzueno/items/97222296337827f81ab0)でKeychainのアクセスか何かで爆熱になる。
+[バグ](https://qiita.com/katzueno/items/97222296337827f81ab0)で Keychain のアクセスか何かで爆熱になる。
 
 根本的な解決法は何なんだろう？
 
@@ -73,7 +75,7 @@ $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bas
 $ source ~/.zshrc
 ```
 
-Homebrewを使わずに直接`curl`で導入するのが良いとされています。
+Homebrew を使わずに直接`curl`で導入するのが良いとされています。
 
 ### [deno](https://deno.com/)
 
@@ -101,7 +103,7 @@ $ rbenv versions
 * 3.2.2 (set by /Users/devonly/.rbenv/version)
 ```
 
-このあと、`~/.zshrc`を編集してユーザー領域のRubyを利用するように変更
+このあと、`~/.zshrc`を編集してユーザー領域の Ruby を利用するように変更
 
 ```.zshrc
 [[ -d ~/.rbenv  ]] && \
@@ -114,4 +116,4 @@ $ which ruby
 /Users/devonly/.rbenv/shims/ruby
 ```
 
-無事にユーザー領域のRubyが利用できるようになった。
+無事にユーザー領域の Ruby が利用できるようになった。

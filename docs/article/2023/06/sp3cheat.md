@@ -1,24 +1,26 @@
 ---
-title: スプラトゥーン3で公開されているパッチを確認する 
+title: スプラトゥーン3で公開されているパッチを確認する
 date: 2023-06-20
 description: IPSwitch向けのパッチを確かめてみることにしました
-tag:
-    - Splatoon3
 category:
-    - IPSwitch
+  - Nintendo
+  - Hack
+tag:
+  - Splatoon3
+  - IPSwitch
 ---
 
 ## IPSwitch
 
-IPSwitchはニンテンドースイッチで動作するexefs形式のパッチファイルを提供するためのツールです。
+IPSwitch はニンテンドースイッチで動作する exefs 形式のパッチファイルを提供するためのツールです。
 
 具体的にはパッチが載ったテキストからパッチファイルを自動で作成してくれます。
 
-なお、パッチが効くのはLFSの仕組み上、ゲームを起動した瞬間ですのでゲームプレイ中にパッチの有効・無効を切り替えることはできません。
+なお、パッチが効くのは LFS の仕組み上、ゲームを起動した瞬間ですのでゲームプレイ中にパッチの有効・無効を切り替えることはできません。
 
-### スプラトゥーン3向け
+### スプラトゥーン 3 向け
 
-[GitHubで公開されている](https://github.com/Coxxs/public-pchtxt/blob/main/SPL3_PUBLIC_4.0.2.pchtxt)のでそれをそのまま貼り付けます。
+[GitHub で公開されている](https://github.com/Coxxs/public-pchtxt/blob/main/SPL3_PUBLIC_4.0.2.pchtxt)のでそれをそのまま貼り付けます。
 
 ```
 @nsobid-D5184D7605B44068D4B09FB619BB3DA8CC32F20F
@@ -26,10 +28,10 @@ IPSwitchはニンテンドースイッチで動作するexefs形式のパッチ�
 
 @flag offset_shift 0x100
 
-// [!]  All patches are NOT online safe, **use them only in emummc**, 
+// [!]  All patches are NOT online safe, **use them only in emummc**,
 //      and keep emummc offline forever, otherwise your console will
 //      be banned.
-//      If you are playing with your friends (LDN/LAN), make sure 
+//      If you are playing with your friends (LDN/LAN), make sure
 //      their consoles are in isolated emummc as well.
 //
 // <3 Special thanks to Shadow & Takaharu
@@ -49,11 +51,11 @@ IPSwitchはニンテンドースイッチで動作するexefs形式のパッチ�
 02F7291C 1F2003D51F2003D51F2003D51F2003D5
 
 // Always Lan [Takaharu]
-@disabled 
+@disabled
 02FA9730 28008052
 
 // Quick Lan [Coxxs]
-@enabled 
+@enabled
 033B469C 1F050071
 
 // One Player Shoal v2 [Coxxs]
@@ -75,7 +77,7 @@ IPSwitchはニンテンドースイッチで動作するexefs形式のパッチ�
 03B92EC0 C9008052
 05FFECB4 05000000
 
-// Shoal Splatfest (Night + Bgm) [Coxxs] 
+// Shoal Splatfest (Night + Bgm) [Coxxs]
 @disabled
 032DD52C E9008052
 032DD848 21008052
@@ -201,7 +203,7 @@ IPSwitchはニンテンドースイッチで動作するexefs形式のパッチ�
 
 ## それぞれのパッチの効果
 
-なお、ニンテンドースイッチオンライン未連携、90DNSを導入して任天堂のサーバーに繋がらない状態で検証を行っています。
+なお、ニンテンドースイッチオンライン未連携、90DNS を導入して任天堂のサーバーに繋がらない状態で検証を行っています。
 
 ### Offline Lobby + Grizzco
 
@@ -213,15 +215,15 @@ IPSwitchはニンテンドースイッチで動作するexefs形式のパッチ�
 
 ### Always Lan
 
-イカッチャに入ると自動でLan Playになります
+イカッチャに入ると自動で Lan Play になります
 
 > 切り替える手間が省けるので楽になります
 
 ### Quick Lan
 
-イカッチャでのLocal PlayとLan Playの切り替えの待ち時間がなくなります。
+イカッチャでの Local Play と Lan Play の切り替えの待ち時間がなくなります。
 
-> Always Lanがあればこっちは不要説もあります
+> Always Lan があればこっちは不要説もあります
 
 ### One Player Shoal v2
 
@@ -231,15 +233,15 @@ IPSwitchはニンテンドースイッチで動作するexefs形式のパッチ�
 
 ### Allow Hazard Level 200+
 
-プライベートバイトではキケン度200%の上限がありますが、その制限が解除できます。
+プライベートバイトではキケン度 200%の上限がありますが、その制限が解除できます。
 
-> 見かけ上、400%くらいまで選べるようになっていますが内部的には333%以降は反映されません
+> 見かけ上、400%くらいまで選べるようになっていますが内部的には 333%以降は反映されません
 
 ### Offline Splatfest / Big Run
 
 クマサン商会がビッグラン状態になります。
 
-> 以下のBig Runのコードとの併用が必須です
+> 以下の Big Run のコードとの併用が必須です
 
 ### Big Run
 

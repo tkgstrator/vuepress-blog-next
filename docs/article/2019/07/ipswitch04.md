@@ -5,7 +5,7 @@ description: BYAMLなどの暗号化されたXMLのデータを読み取って�
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - Splatoon2
   - IPSwitch
 ---

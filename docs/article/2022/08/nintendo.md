@@ -2,8 +2,9 @@
 title: 任天堂がAPIをサイレントアプデしました
 date: 2022-08-23
 description: 任天堂のAPI更新で、全ての非公式ツールが動作しなくなりました
+category:
+  - Nintendo
 tag:
-  - Programming
   - Salmon Run
 ---
 

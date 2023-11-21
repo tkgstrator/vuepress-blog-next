@@ -1,12 +1,17 @@
 ---
-title: Stable DiffusionをDockerで動かすチュートリアル 
+title: Stable DiffusionをDockerで動かすチュートリアル
 date: 2023-05-12
-description: 環境を汚さないようにDockerで動かしたい人のための解説記事です 
+description: 環境を汚さないようにDockerで動かしたい人のための解説記事です
+category:
+  - Tech
+tag:
+  - Stable Diffusion
+  - Docker
 ---
 
 ## 環境
 
-必要なものは以下の三つです。ちなみに環境はUbuntu 22.04です。
+必要なものは以下の三つです。ちなみに環境は Ubuntu 22.04 です。
 
 - CUDA
 - Docker
@@ -27,7 +32,7 @@ $ nvidia-smi
 |  0%   33C    P8                9W / 285W|   3043MiB / 12282MiB |      0%      Default |
 |                                         |                      |                  N/A |
 +-----------------------------------------+----------------------+----------------------+
-                                                                                         
+
 +---------------------------------------------------------------------------------------+
 | Processes:                                                                            |
 |  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
@@ -39,8 +44,7 @@ $ nvidia-smi
 +---------------------------------------------------------------------------------------+
 ```
 
-ドライバー自体はUbuntuのSoftware Updaterから導入しました。このままではDockerのコンテナ内からCUDAが利用できないので、[NVIDIA container toolkitを使って、dockerのコンテナ上でcudaを動かす](https://qiita.com/Hiroaki-K4/items/c1be8adba18b9f0b4cef)の記事を参考にNVIDIA container toolkitを導入してください。
-
+ドライバー自体は Ubuntu の Software Updater から導入しました。このままでは Docker のコンテナ内から CUDA が利用できないので、[NVIDIA container toolkit を使って、docker のコンテナ上で cuda を動かす](https://qiita.com/Hiroaki-K4/items/c1be8adba18b9f0b4cef)の記事を参考に NVIDIA container toolkit を導入してください。
 
 ### Docker
 
@@ -58,12 +62,12 @@ Docker Compose version v2.10.2
 
 ## [Stable Diffusion WebUI Docker](https://github.com/AbdBarho/stable-diffusion-webui-docker)
 
-GitHubで公開されているのでこれを利用します。
+GitHub で公開されているのでこれを利用します。
 
 ```bash
 git clone https://github.com/AbdBarho/stable-diffusion-webui-docker
 cd stable-diffusion-webui-docker
-``` 
+```
 
 ここに既に`docker-compose.yml`があるのでこれを利用します。
 
@@ -71,9 +75,9 @@ cd stable-diffusion-webui-docker
 docker compose --profile auto up --build
 ```
 
-とすればAUTOMATIC1111版のStable Diffusion WebUIが起動します。他にもいろいろUIがあるのですが、とりあえずこれでいいと思います。
+とすれば AUTOMATIC1111 版の Stable Diffusion WebUI が起動します。他にもいろいろ UI があるのですが、とりあえずこれでいいと思います。
 
-するとビルドから何まですべてやってくれます。container toolkitを入れ忘れているとここでなんかエラーが出ます。
+するとビルドから何まですべてやってくれます。container toolkit を入れ忘れているとここでなんかエラーが出ます。
 
 で、このままだと`localhost:7860`でしかアクセスできないので、外からアクセスできるようにします。ルーターのポートフォワードなどは各自やっているものとします。
 
@@ -81,7 +85,7 @@ docker compose --profile auto up --build
 
 以下の内容を`docker-compose.yml`に追記します。いつも使っている`nginx-proxy`と`letsencrypt-nginx-proxy-companion`の組み合わせです。
 
-TSLが必須でなければ後者は不要です。
+TSL が必須でなければ後者は不要です。
 
 また`auto`のところをちょっと変えます。`ports`が本当に必要かどうかはわからないので、有識者教えて下さい。
 
@@ -143,7 +147,7 @@ LETSENCRYPT_EMAIL=
 
 #### Makefile
 
-自分は何度もコマンドを打つのがめんどくさかったのでMakefile化しました。
+自分は何度もコマンドを打つのがめんどくさかったので Makefile 化しました。
 
 ローカルで動かしたいときなら`make up`、外部からも使えるようにしたいときは`make start`という感じです。
 
@@ -156,15 +160,15 @@ up:
 start:
 	docker compose --profile auto --profile external up --build -d
 
-.PHONY: down 
+.PHONY: down
 down:
 	docker compose down
 ```
 
-VScodeであればSSHで繋げばそのへんもよしなにやってくれるので実は外部に公開しなくてもSSHで繋げばローカル扱いでアクセスできます。
+VScode であれば SSH で繋げばそのへんもよしなにやってくれるので実は外部に公開しなくても SSH で繋げばローカル扱いでアクセスできます。
 
 なのでこれは完全に第三者に公開するためのものです。
 
-ここまで書いてあれですが、第三者に公開する必要がないならここまでの手順は全部要らないです。Dockerで動かして終わりです。
+ここまで書いてあれですが、第三者に公開する必要がないならここまでの手順は全部要らないです。Docker で動かして終わりです。
 
 記事は以上。

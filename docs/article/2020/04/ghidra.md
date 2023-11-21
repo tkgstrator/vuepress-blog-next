@@ -5,7 +5,7 @@ description: NSAが公開した逆アセンブラツールであるGhidraを使�
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - Salmon Run
   - IPSwitch
   - Ghidra

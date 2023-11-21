@@ -5,7 +5,7 @@ description: ニンテンドースイッチにおけるBAN解除の可能性に�
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - Nintendo Switch
 ---
 

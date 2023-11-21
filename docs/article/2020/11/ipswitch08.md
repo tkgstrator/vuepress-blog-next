@@ -5,7 +5,7 @@ description: ナイスやカモンを上書きしてリアルタイムスペシ�
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - Splatoon2
   - IPSwitch
 ---

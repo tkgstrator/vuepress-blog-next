@@ -2,6 +2,10 @@
 title: シナリオコードのロジックについて
 date: 2023-02-13
 description: スプラトゥーン3で利用されているシナリオコードについて解説します
+category:
+  - Nintendo
+tag:
+  - Splatoon3
 ---
 
 ## シナリオコード

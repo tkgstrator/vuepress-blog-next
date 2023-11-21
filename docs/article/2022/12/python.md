@@ -2,6 +2,10 @@
 title: Python
 date: 2022-12-05
 description: Pythonで何回も調べ直してしまうことを備忘録として残しておきます
+category:
+  - Programming
+tag:
+  - Python
 ---
 
 ## 環境構築

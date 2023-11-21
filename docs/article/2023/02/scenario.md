@@ -2,6 +2,13 @@
 title: スプラトゥーン3におけるシナリオプロトコル解説
 date: 2023-02-04
 description: 前作との比較も含めて解説していきます
+category:
+  - Nintendo
+  - Hack
+tag:
+  - Splatoon2
+  - Splatoon3
+  - IPSwitch
 ---
 
 ## 基本的な背景

@@ -5,7 +5,7 @@ description: サーモンランのWAVE数や時間をする変更コード
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - Salmon Run
   - IPSwitch
 ---

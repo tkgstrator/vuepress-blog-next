@@ -5,7 +5,7 @@ description: Starlionについて簡単に解説しています
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - Splatoon2
   - Starlight
 ---
