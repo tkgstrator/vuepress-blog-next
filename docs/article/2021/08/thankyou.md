@@ -2,9 +2,8 @@
 title: お礼を言い忘れていたので
 date: 2021-08-13
 description: 最近、複数の方からご支援頂いているのでその報告をまとめてさせていただきあます
-category: 話題
-tag:
-  - ほしいものリスト
+category: 
+  - Others
 ---
 
 # 近況報告

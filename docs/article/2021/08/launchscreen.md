@@ -2,7 +2,8 @@
 title: SwiftUIでLaunchScreenを実装する方法
 date: 2021-08-26
 description: SwiftUIアプリで起動時の画面を作成する方法について解説します
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - SwiftUI

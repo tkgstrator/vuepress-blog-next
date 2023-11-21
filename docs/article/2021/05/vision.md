@@ -2,7 +2,8 @@
 title: Vision + SwiftUI
 date: 2021-05-26
 description: SwiftUIで画像認識系のフレームワークであるVisionを使ってみました
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 layout: draft

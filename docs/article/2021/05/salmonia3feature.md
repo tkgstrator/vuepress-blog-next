@@ -2,7 +2,8 @@
 title: Salmonia3の実装予定機能とか
 date: 2021-05-09
 description: Salmonia3に実装しようとしている機能メモです、欲しい機能はコメントでお願いします
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 layout: draft

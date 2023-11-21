@@ -2,7 +2,8 @@
 title: VuePressで環境変数を利用する
 date: 2021-08-16
 description: VuePressで環境変数を利用してアプリケーションを動かしてみます
-category: プログラミング
+category:
+  - Programming
 tag:
   - Vue
   - Javascript

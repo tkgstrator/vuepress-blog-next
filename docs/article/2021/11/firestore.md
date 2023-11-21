@@ -1,7 +1,8 @@
 ---
 title: Firestore SDKをiOSで使おう
 date: 2021-11-22
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - Firestore

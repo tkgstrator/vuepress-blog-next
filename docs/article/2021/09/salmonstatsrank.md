@@ -2,9 +2,10 @@
 title: Salmon Statsから見る上位ランカーは誰か
 date: 2021-09-30
 description: Salmon Statsの記錄からサーモンランの上位ランカーが誰かを調べてみました
-category: 話題
+category: 
+  - Nintendo
 tag:
-  - サーモンラン
+  - Salmon Run
 ---
 
 # [Salmon Stats](https://salmon-stats.yuki.games/)

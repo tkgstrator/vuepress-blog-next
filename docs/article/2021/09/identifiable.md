@@ -2,7 +2,8 @@
 title: Identifiableに適合させるお話
 date: 2021-09-27
 description: SwiftのプロトコルにIdentifiableというものがあるのですが、それを完全に勘違いしていたという話
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - SwiftUI

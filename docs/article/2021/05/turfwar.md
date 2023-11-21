@@ -2,9 +2,11 @@
 title: ナワバリバトルの勝ち方がわからない皆様へ
 date: 2021-05-28
 description: スプラトゥーンにおける基本ゲームモードであるナワバリバトルの勝ち方について考察します
-category: スプラトゥーン2
+category: 
+  - Nintendo
 tag:
-  - ナワバリバトル
+  - Turf War
+  - Splatoon2
 ---
 
 ## ナワバリバトル

@@ -1,20 +1,21 @@
 ---
-title: "[IPSwitch] 誰でもできるコード開発 #10"
+title: "誰でもできるコード開発 #10"
 date: 2021-05-24
 description: 条件文を利用するリアルタイムスペシャル変更コードの改善方法について解説しています
-category: Hack
+category: 
+  - Hack
+  - Programming
 tag:
   - IPSwitch
-  - コード開発
 ---
 
-# [IPSwitch] 誰でもできるコード開発 #10
+# 誰でもできるコード開発 #10
 
 ## はじめに
 
 今回の内容は以下の記事の続きになります。
 
-[[IPSwitch] 誰でもできるコード開発 #9](https://tkgstrator.work/posts/2021/02/14/ipswitch09.html)
+[誰でもできるコード開発 #9](https://tkgstrator.work/posts/2021/02/14/ipswitch09.html)
 
 この記事を読むにあたって必ず目を通して理解しておいてください。
 

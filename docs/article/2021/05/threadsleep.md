@@ -2,7 +2,8 @@
 title: SwiftUIでスリープ機能を実装しよう
 date: 2021-05-17
 description: ある処理を行ったときに連続で処理することを防ぐためにスリープする方法を考えます
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

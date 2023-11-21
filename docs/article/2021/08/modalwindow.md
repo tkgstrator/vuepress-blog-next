@@ -2,7 +2,8 @@
 title: SwiftUIでModalWindowをカスタマイズする話
 date: 2021-08-13
 description: SwiftUIのモーダルは二種類しかないのですが、変更することはできるかどうかを解説
-category: プログラミング
+category:
+  - Programming
 tag:
   - SwiftUI
   - Swift

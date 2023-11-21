@@ -2,7 +2,8 @@
 title: ponponpainを支える技術が斬新すぎた
 date: 2021-05-02
 description: インターネット界隈でよく目にするponponpainの謎に迫りました
-category: 話題
+category: 
+  - Programming
 ---
 
 ## ponponpain とは

@@ -2,7 +2,8 @@
 title: iOSアプリ開発で導入すべきライブラリまとめ
 date: 2021-08-23
 description: SwiftUIでデバイスや傾きごとにレイアウトを変更したい場合のコーディングについて学びます
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - SwiftUI

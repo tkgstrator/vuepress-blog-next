@@ -2,9 +2,8 @@
 title: Adobe XDのスタータープランはどこに消えた
 date: 2021-09-09
 description: UIのデザインがお手軽にできるというAdobeXDを試してみました
-category: 話題
-tag:
-  - Adobe
+category: 
+  - Others
 ---
 
 # [Adobe XD](https://www.adobe.com/jp/products/xd.html)

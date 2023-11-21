@@ -2,9 +2,11 @@
 title: トキシラズいぶし工房の最良開栓手順を考える
 date: 2021-05-27
 description: トキシラズいぶし工房の最良開栓手順について
-category: スプラトゥーン2
+category: 
+  - Nintendo
 tag:
-  - サーモンラン
+  - Splatoon2
+  - Salmon Run
 ---
 
 ## トキシラズいぶし工房最良開栓手順

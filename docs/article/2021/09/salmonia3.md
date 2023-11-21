@@ -2,11 +2,12 @@
 title: Salmonia3の開発状況進捗
 date: 2021-09-15
 description: 開発中のSalmonia3の機能と進捗具合について報告
-category: 話題
+category: 
+  - Programming
 tag:
-  - SwiftUI
   - Swift
-  - Salmonia
+  - SwiftUI
+  - Salmonia3+
 ---
 
 # [Salmonia3](https://apps.apple.com/jp/app/salmonia3/id1558344150)

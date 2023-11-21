@@ -2,7 +2,8 @@
 title: GitHub ActionsでNetlifyのビルド時間を浮かせよう
 date: 2021-05-06
 description: Netlifyは便利なのですが、ビルド時間が一ヶ月で300分しかないのが問題ですなので、それをGitHub Actionsで解決しましょう
-category: プログラミング
+category:
+  - Programming
 ---
 
 ## Netlify の最大の問題点

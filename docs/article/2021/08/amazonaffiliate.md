@@ -2,7 +2,8 @@
 title: Vuepressでアマゾンアフィリエイトを表示させる
 date: 2021-08-10
 description: Vuepressでつくったサイトにアフィリエイトを表示させるコンポーネントを作成する手順について解説
-category: プログラミング
+category:
+  - Programming
 tag:
   - Vue
   - Javascript

@@ -1,5 +1,5 @@
 ---
-title: "[IPSwitch] 誰でもできるコード開発 #9"
+title: "誰でもできるコード開発 #9"
 date: 2021-02-14
 description: インスタンスを利用するコードの移植方法について解説しています
 category:
@@ -10,13 +10,13 @@ tag:
   - IPSwitch
 ---
 
-# [IPSwitch] 誰でもできるコード開発 #9
+# 誰でもできるコード開発 #9
 
 ## はじめに
 
 今回の内容は以下の記事の続きになります。
 
-[[IPSwitch] 誰でもできるコード開発 #8](https://tkgstrator.work/posts/2020/11/02/ipswitch08.html)
+[誰でもできるコード開発 #8](https://tkgstrator.work/posts/2020/11/02/ipswitch08.html)
 
 この記事を読むにあたって必ず目を通して理解しておいてください。
 

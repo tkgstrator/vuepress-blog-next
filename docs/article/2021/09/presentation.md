@@ -2,7 +2,8 @@
 title: 自作ModalWindowがとじれないのでアップデートしてみた
 date: 2021-09-08
 description: SwiftyUIで自作Modalを作成したのは良いのですが、一部の機能が使えないので修正しました
-category: プログラミング
+category:
+  - Programming
 tag:
   - SwiftUI
   - Swift

@@ -2,7 +2,8 @@
 title: RealmOptionalがRealmPropertyになっていた
 date: 2021-06-30
 description: RealmSwiftのバージョンv10.8.0から仕様が変わっていました
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - Realm

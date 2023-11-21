@@ -2,7 +2,8 @@
 title: Assets.xcassetsの使い方わかってなくてごめんなさい
 date: 2021-09-06
 description: XcodeでAssetsを利用する方法がまるでなっていなかったので自戒の念を込めて記事にしました
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - SwiftUI

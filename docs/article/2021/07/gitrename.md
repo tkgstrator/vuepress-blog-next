@@ -2,7 +2,8 @@
 title: よく使うGitコマンドまとめ
 date: 2021-07-12
 description: 誤って違う名前やメールアドレスでコミットメッセージをプッシュしてしまったときの修正方法です
-category: プログラミング
+category:
+  - Programming
 tag:
   - Git
 ---

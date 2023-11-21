@@ -2,7 +2,8 @@
 title: ContentView自体にタップ判定をつけよう
 date: 2021-05-06
 description: ContentViewやそれ以上のルートビューにonTapGestureをつけると思わぬ不具合を生んでしまいます
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

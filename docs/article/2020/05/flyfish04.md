@@ -2,10 +2,11 @@
 title: "[第四回] カタパッド片翼化は本当に有効か？"
 date: 2020-05-06
 description: サーモンランにおける片翼化は本当に有効なのか検証
-category: スプラトゥーン2
+category: 
+  - Nintendo
 tag:
-  - カタパッドマップ
-  - サーモンラン
+  - Splatoon2
+  - Salmon Run
 ---
 
 ### カタパ出現率の理論値

@@ -1,7 +1,8 @@
 ---
 title: GeometryReaderの挙動について学ぶ
 date: 2021-10-11
-category: プログラミング
+category:
+  - Programming
 tag:
   - SwiftUI
   - Swift

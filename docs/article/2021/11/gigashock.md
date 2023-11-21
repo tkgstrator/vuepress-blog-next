@@ -4,7 +4,7 @@ date: 2021-11-01
 description: コンピュータを使って自作定跡を作成する方法について解説します
 categoriy: 将棋
 tag:
-  - プログラミング
+  - Programming
 ---
 
 ## ギガショック定跡とは

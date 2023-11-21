@@ -2,7 +2,8 @@
 title: Salmonia3の進捗報告
 date: 2021-08-31
 description: ようやくSalmonia3にアプリ内課金を導入することができましたのでここまでを総括します
-category: プログラミング
+category:
+  - Programming
 tag:
   - SwiftUI
   - Swift

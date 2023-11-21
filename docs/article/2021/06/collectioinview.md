@@ -2,7 +2,8 @@
 title: SwiftUIでCollectionViewを実装する
 date: 2021-06-07
 description: SwiftUIでUIKit時代のCollectionViewを再現するための方法について解説
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - SwiftUI

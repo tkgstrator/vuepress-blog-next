@@ -2,7 +2,8 @@
 title: 北米版のBD販売情報を取得しよう
 date: 2021-09-07
 description: 北米版BDを扱う最大手のサイトであるRightStufのデータを取得するプログラムを書きました
-category: プログラミング
+category:
+  - Programming
 tag:
   - Python
 ---

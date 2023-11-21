@@ -2,7 +2,8 @@
 title: 何故プログラミングをするのですか
 date: 2021-06-16
 description: 何故えむいーさんはプログラミングをするのか、その理由を解説します
-category: 話題
+category: 
+  - Programming
 ---
 
 # 何故プログラミングをするのですか

@@ -2,7 +2,8 @@
 title: クラスのプロパティを取得する
 date: 2021-07-26
 description: クラスのプロパティをコードで取得して利用するようなプログラムを考えます
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

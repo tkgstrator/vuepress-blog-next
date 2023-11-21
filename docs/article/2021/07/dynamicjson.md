@@ -2,7 +2,8 @@
 title: 動的なキーをもつJSONをCoodableで扱う
 date: 2021-07-19
 description: 動的なキーをもつJSONをCodableでデコードする方法について解説します
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - JSON

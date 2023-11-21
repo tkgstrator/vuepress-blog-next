@@ -2,7 +2,8 @@
 title: RealmCocoaがSwiftUIに正式対応してるっぽい
 date: 2021-08-05
 description: RealmSwiftがSwiftUIに対応した
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - RealmSwift

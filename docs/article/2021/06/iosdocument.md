@@ -2,7 +2,8 @@
 title: iOSでDocumentsにファイルを保存する方法
 date: 2021-06-02
 description: SwiftでiOSのDocumentsにファイルを保存するためのコーディングを学びます
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

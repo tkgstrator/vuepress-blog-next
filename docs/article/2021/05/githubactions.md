@@ -2,7 +2,8 @@
 title: GitHub Actionsが便利すぎた
 date: 2021-05-06
 description: GitHub Actionsの存在は知っていたのですが、使ってみたら驚くほどに便利でした
-category: プログラミング
+category:
+  - Programming
 ---
 
 ## GitHub Actions

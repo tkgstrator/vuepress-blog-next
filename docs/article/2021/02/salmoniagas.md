@@ -4,7 +4,7 @@ date: 2021-02-04
 category:
   - Nintendo
 tag:
-  - Salmonia
+  - Salmonia3+
 ---
 
 ## Android 利用者向けである

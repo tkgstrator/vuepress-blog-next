@@ -2,7 +2,8 @@
 title: SwiftUIでタップされた座標を取得する方法
 date: 2021-05-31
 description: SwiftUIでタップイベントを取得する方法について
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - SwiftUI
