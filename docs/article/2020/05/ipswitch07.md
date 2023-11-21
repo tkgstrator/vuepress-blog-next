@@ -5,7 +5,7 @@ description: ナイスやカモンを上書きしてリアルタイムチーム�
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - IPSwitch
   - Starlight
 ---
