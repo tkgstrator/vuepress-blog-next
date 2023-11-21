@@ -2,8 +2,12 @@
 title: "[IPSwitch] 誰でもできるコード開発 #01"
 date: 2019-05-01
 description: スプラトゥーン2でスペシャル消費量を0にするためのコードの書き方を解説しています
+category:
+  - Nintendo
+  - Hack
 tag:
-  - スプラトゥーン
+  - Nintendo Switch
+  - Splatoon2
   - IPSwitch
 ---
 
