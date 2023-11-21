@@ -2,8 +2,10 @@
 title: 任天堂のAPIアップデートに対応しました
 date: 2022-08-25
 description: 今回の任天堂の変更は一体何だったのかについて詳しく語ります
+category:
+  - Nintendo
 tag:
-  - Splatoon3 
+  - Splatoon3
   - Salmonia3+
 ---
 

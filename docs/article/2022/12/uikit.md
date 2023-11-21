@@ -2,6 +2,8 @@
 title: SwiftUI+UIKit
 date: 2022-12-09
 description: SwiftUIで妙にいじれないところを備忘録としてメモする
+category:
+  - Programming
 tag:
   - SwiftUI
   - Swift

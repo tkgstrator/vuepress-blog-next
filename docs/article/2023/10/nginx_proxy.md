@@ -1,37 +1,41 @@
 ---
-title: リバースプロキシを利用した何も考えずにTLS対応のサーバーを立てる方法 
+title: リバースプロキシを利用した何も考えずにTLS対応のサーバーを立てる方法
 date: 2023-10-23
-description: Dockerのイメージを利用して何も考えずにHTTPS対応のサーバーを立てる方法を考えます 
+description: Dockerのイメージを利用して何も考えずにHTTPS対応のサーバーを立てる方法を考えます
+category:
+  - Tech
+tag:
+  - Docker
 ---
 
 ## 背景
 
 以下のような利用を想定しています。
 
-1. ウェブアプリがNodeJSでポート3030で起動中(ポート自体は何でも良い)
-2. HTTPに対応してポート(80)でウェブアプリにアクセスできるようにしたい
-3. TLSに対応してHTTPS(ポート443)でウェブアプリにアクセスできるようにしたい
-4. TLSの更新にCloudflareのSSL/TLSを利用したい
-5. IPアドレスが変更されたときにDDNSで自動的に対応したい
+1. ウェブアプリが NodeJS でポート 3030 で起動中(ポート自体は何でも良い)
+2. HTTP に対応してポート(80)でウェブアプリにアクセスできるようにしたい
+3. TLS に対応して HTTPS(ポート 443)でウェブアプリにアクセスできるようにしたい
+4. TLS の更新に Cloudflare の SSL/TLS を利用したい
+5. IP アドレスが変更されたときに DDNS で自動的に対応したい
 
-SSL/TLS対応はLet's encryptを使うのが有名ですが、地味にめんどくさいのでCloudflareの機能で代用しようというわけです。
+SSL/TLS 対応は Let's encrypt を使うのが有名ですが、地味にめんどくさいので Cloudflare の機能で代用しようというわけです。
 
 ### 必要なもの
 
-SSL/TLS対応はDockerイメージを利用しないので、必要なものは以下の三つです。ウェブアプリのDockerイメージについては自分で作成してください。
+SSL/TLS 対応は Docker イメージを利用しないので、必要なものは以下の三つです。ウェブアプリの Docker イメージについては自分で作成してください。
 
 1. [jwilder/nginx-proxy](https://hub.docker.com/r/jwilder/nginx-proxy)
-    - リバースプロキシを可能にします
+   - リバースプロキシを可能にします
 2. [oznu/cloudflare-ddns](https://hub.docker.com/r/oznu/cloudflare-ddns/)
-    - 定期的にCloudflareにDDNSの通知を飛ばします
+   - 定期的に Cloudflare に DDNS の通知を飛ばします
 3. ウェブアプリ
 
 ### docker compose
 
-以下のようなYAMLファイルを作成します。
+以下のような YAML ファイルを作成します。
 
 ```yaml
-version: '3.9'
+version: "3.9"
 
 services:
   app:
@@ -64,7 +68,7 @@ services:
       SUBDOMAIN: $SUBDOMAIN
       PROXIED: $PROXIED
       RRTYPE: $RRTYPE
-    network_mode: 'host'
+    network_mode: "host"
     depends_on:
       nginx_proxy:
         condition: service_started
@@ -85,18 +89,17 @@ PROXIED=
 RRTYPE=
 ```
 
-| キー名       | 意味                           | 設定する値の例       | 
-| :----------: | :----------------------------: | :------------------: | 
-| VIRTUAL_PORT | ウェブアプリが利用するポート   | 3030                 | 
-| VIRTUAL_HOST | 利用したいドメイン名           | docs.tkgstrator.work | 
-| API_KEY      | CloudflareのAPIキー            | -                    | 
-| ZONE         | ホスト名                       | tkgstrator.work      | 
-| SUBDOMAIN    | サブドメイン                   | docs                 | 
-| PROXIED      | プロクシを利用するか           | trueまたはfalse      | 
-| RRTYPE       | IPv4かIPv6のどちらを利用するか | AまたはAAAA          | 
+|    キー名    |               意味                |    設定する値の例    |
+| :----------: | :-------------------------------: | :------------------: |
+| VIRTUAL_PORT |   ウェブアプリが利用するポート    |         3030         |
+| VIRTUAL_HOST |       利用したいドメイン名        | docs.tkgstrator.work |
+|   API_KEY    |      Cloudflare の API キー       |          -           |
+|     ZONE     |             ホスト名              |   tkgstrator.work    |
+|  SUBDOMAIN   |           サブドメイン            |         docs         |
+|   PROXIED    |       プロクシを利用するか        |  true または false   |
+|    RRTYPE    | IPv4 か IPv6 のどちらを利用するか |    A または AAAA     |
 
-
-ZONEとSUBDOMAINの値はVIRTUAL_HOSTと一致しなければいけません。
+ZONE と SUBDOMAIN の値は VIRTUAL_HOST と一致しなければいけません。
 
 設定が正しく反映されているかは`docker compose config`で確認できます。
 
@@ -121,44 +124,44 @@ API_PROXIED=true
 API_RRTYPE=AAAA
 ```
 
-AAAA(IPv6)に対応させているのはIPv6ではNAT越えを考えずに単にグローバルIDを指定するだけで良いこと(ルーターでのポートフォワーディングが不要)が理由です。何か制約があるわけではないのであればAAAAを指定したほうが良いです。
+AAAA(IPv6)に対応させているのは IPv6 では NAT 越えを考えずに単にグローバル ID を指定するだけで良いこと(ルーターでのポートフォワーディングが不要)が理由です。何か制約があるわけではないのであれば AAAA を指定したほうが良いです。
 
-また、CloudflareによるHTTPS化に対応させるためには`API_PROXIED=true`を指定する必要があります。これを設定することでCloudflareまでのアクセスはHTTPSで保護され、Cloudflareから実際のサーバーまでの通信はProxyが適用されます。
+また、Cloudflare による HTTPS 化に対応させるためには`API_PROXIED=true`を指定する必要があります。これを設定することで Cloudflare までのアクセスは HTTPS で保護され、Cloudflare から実際のサーバーまでの通信は Proxy が適用されます。
 
-よって、アクセスして動作確認をするURLは以下の五つです。
+よって、アクセスして動作確認をする URL は以下の五つです。
 
-> ローカルIPのものは当たり前ですがローカルでしか繋がりません
+> ローカル IP のものは当たり前ですがローカルでしか繋がりません
 
 1. [http://localhost:3030/docs](http://localhost:3030/docs)
-    - ウェブアプリの起動確認
+   - ウェブアプリの起動確認
 2. [http://api.splatnet3.com:3030/docs]([http://api.splatnet3.com:3030/docs)
-    - DDNSの動作確認
+   - DDNS の動作確認
 3. [http://localhost/docs](http://localhost/docs)
-    - Nginx Proxyの動作確認
-    - 多分これは繋がらないと思う(理由はよくわかっていない)
+   - Nginx Proxy の動作確認
+   - 多分これは繋がらないと思う(理由はよくわかっていない)
 4. [http://api.splatnet3.com/docs](http://api.splatnet3.com/docs)
-    - DDNS + Nginx Proxyの動作確認
+   - DDNS + Nginx Proxy の動作確認
 
-4が繋がったらDDNSとNginx Proxyが正しく動いているので最後にHTTPS対応の処理を行います。
+4 が繋がったら DDNS と Nginx Proxy が正しく動いているので最後に HTTPS 対応の処理を行います。
 
-Google Chromeなどでは自動でHTTPSにリダイレクトされる機能があるかもしれないので何らかの方法で直接プロトコルを指定して叩くと良いかもです。
+Google Chrome などでは自動で HTTPS にリダイレクトされる機能があるかもしれないので何らかの方法で直接プロトコルを指定して叩くと良いかもです。
 
-### Cloudflareの設定
+### Cloudflare の設定
 
-Cloudflareのウェブサイトからドメインを選択しSSL/TLSの項目を変更します。
+Cloudflare のウェブサイトからドメインを選択し SSL/TLS の項目を変更します。
 
-Overviewの項目でYour SSL/TLS encryption modeの設定で、
+Overview の項目で Your SSL/TLS encryption mode の設定で、
 
 - Off(not secure)
 - Flexible
 - Full
 - Full(strict)
 
-があると思うのですが`Flexible`を選択します。もしもサーバー自体がSSL/TLSに対応している場合はFullを選択して良いのですが、今回はウェブサーバー自体でSSLを設定していないのでFlexibleを選択します。
+があると思うのですが`Flexible`を選択します。もしもサーバー自体が SSL/TLS に対応している場合は Full を選択して良いのですが、今回はウェブサーバー自体で SSL を設定していないので Flexible を選択します。
 
-最後にHTTPSに対応したURLを開いて通信が正常に行えることを確認します。
+最後に HTTPS に対応した URL を開いて通信が正常に行えることを確認します。
 
 5. [https://api.splatnet3.com/docs](https://api.splatnet3.com/docs)
-    - DDNS + Nginx Proxy + TLSの動作確認
+   - DDNS + Nginx Proxy + TLS の動作確認
 
 記事は以上。

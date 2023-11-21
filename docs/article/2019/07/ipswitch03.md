@@ -5,7 +5,7 @@ description: 関数の返り値自体を変更して、イカッチャのナゾ�
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - Splatoon2
   - IPSwitch
   - IDA Pro

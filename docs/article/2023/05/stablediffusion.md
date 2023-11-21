@@ -1,24 +1,28 @@
 ---
-title: M1/M2でStable Diffusionを動かす方法について 
+title: M1/M2でStable Diffusionを動かす方法について
 date: 2023-05-08
 description: これだけ読んでおけば大丈夫な解説内容にしたい
+category:
+  - Tech
+tag:
+  - Stable Diffusion
 ---
 
 ## Stable Diffusion
 
-今更すぎるが、登場時はまだまだだなあと思っていた画像生成AIが随分なレベルにまで上がってきたので触れておくことにしました。
+今更すぎるが、登場時はまだまだだなあと思っていた画像生成 AI が随分なレベルにまで上がってきたので触れておくことにしました。
 
-基本的にSDはRTXシリーズで動かすのが盤石なのですが、M1シリーズもそれなりにGPUコアがあり、一説によるとM1 UltraはRTX2060程度の性能はあるらしいので試してみることにしました。
+基本的に SD は RTX シリーズで動かすのが盤石なのですが、M1 シリーズもそれなりに GPU コアがあり、一説によると M1 Ultra は RTX2060 程度の性能はあるらしいので試してみることにしました。
 
 ### まずはじめに
 
-M1/M2 Stable Diffusionで検索するとCoreMLを利用したツールを紹介されることがありますが、CoreMLには画像サイズを変更できなかったり、やたらと生成した画像のクオリティが低かったりと問題があったのでおすすめしません。
+M1/M2 Stable Diffusion で検索すると CoreML を利用したツールを紹介されることがありますが、CoreML には画像サイズを変更できなかったり、やたらと生成した画像のクオリティが低かったりと問題があったのでおすすめしません。
 
-Stable Diffusionを簡単に利用したいのであればWebUI一択で、他の選択肢はありません。
+Stable Diffusion を簡単に利用したいのであれば WebUI 一択で、他の選択肢はありません。
 
 ## Stable Diffusion WebUI
 
-[Stable Diffusion WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)はここから入手できます。M1/M2での導入方法も[ここ](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon)に書いてあるので、基本的にはこれをそのまま実行するだけで良いです。
+[Stable Diffusion WebUI](https://github.com/AUTOMATIC1111/stable-diffusion-webui)はここから入手できます。M1/M2 での導入方法も[ここ](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Installation-on-Apple-Silicon)に書いてあるので、基本的にはこれをそのまま実行するだけで良いです。
 
 ### パフォーマンス向上
 
@@ -79,9 +83,9 @@ export TORCH_COMMAND="pip install --pre torch==2.0.0.dev20230506 torchvision==0.
 ###########################################
 ```
 
-Torchは20230507のものもリリースされているのですが、それでは`webui.sh`が起動しなくなりました。
+Torch は 20230507 のものもリリースされているのですが、それでは`webui.sh`が起動しなくなりました。
 
-なのでとりあえず一つ前の20230506を利用しています。
+なのでとりあえず一つ前の 20230506 を利用しています。
 
 ## パフォーマンス
 
@@ -97,17 +101,17 @@ Torchは20230507のものもリリースされているのですが、それで�
 
 ### 設定
 
-| パラメータ      | 値         | 
-| :-------------: | :--------: | 
-| Sampling method | -          | 
-| Sampling steps  | 22         | 
-| Width           | 512        | 
-| Height          | 768        | 
-| Batch count     | 1          | 
-| Batch size      | 1          | 
-| CFG Scale       | 7          | 
-| Seed            | 1031604376 | 
-| Script          | None       | 
+|   パラメータ    |     値     |
+| :-------------: | :--------: |
+| Sampling method |     -      |
+| Sampling steps  |     22     |
+|      Width      |    512     |
+|     Height      |    768     |
+|   Batch count   |     1      |
+|   Batch size    |     1      |
+|    CFG Scale    |     7      |
+|      Seed       | 1031604376 |
+|     Script      |    None    |
 
 メソッドには色々あるので、それを変えてみて出力画像を確認してみます。
 
@@ -127,25 +131,25 @@ Torchは20230507のものもリリースされているのですが、それで�
 
 シードが同じため殆どの場合でほぼ同じ画像が生成されましたが、サンプリングメソッドの違いによって大雑把に三パターンの画像に分かれました。
 
-| メソッド          | 生成時間 | パターン | 
-| :---------------: | :------: | :------: | 
-| Euler a           | 12.62s   | A        | 
-| Euler             | 12.53s   | B        | 
-| LMS               | 12.48s   | 不明瞭   | 
-| Heun              | 23.71s   | B        | 
-| DPM2              | 23.69s   | B        | 
-| DPM2 a            | 23.76s   | 不明瞭   | 
-| DPM++ 2S a        | 23.65s   | B+       | 
-| DPM++ 2M          | 12.53s   | B        | 
-| DPM++ SDE         | 25.63s   | A        | 
-| DPM fast          | 12.47s   | 不明瞭   | 
-| DPM adaptive      | 102.49s  | A        | 
-| LMS Karras        | 12.47s   | B        | 
-| DPM2 Karras       | 23.73s   | B        | 
-| DPM2 a Karras     | 23.65s   | C        | 
-| DPM++ 2S a karras | 23.81s   | B+       | 
-| DPM++ 2M karras   | 12.52s   | A        | 
-| DPM++ SDE Karras  | 25.52s   | A        | 
-| DDIM              | 16.35s   | B        | 
-| PLMS              | 12.24s   | 不明瞭   | 
-| UniPC             | 15.26s   | 不明瞭   | 
+|     メソッド      | 生成時間 | パターン |
+| :---------------: | :------: | :------: |
+|      Euler a      |  12.62s  |    A     |
+|       Euler       |  12.53s  |    B     |
+|        LMS        |  12.48s  |  不明瞭  |
+|       Heun        |  23.71s  |    B     |
+|       DPM2        |  23.69s  |    B     |
+|      DPM2 a       |  23.76s  |  不明瞭  |
+|    DPM++ 2S a     |  23.65s  |    B+    |
+|     DPM++ 2M      |  12.53s  |    B     |
+|     DPM++ SDE     |  25.63s  |    A     |
+|     DPM fast      |  12.47s  |  不明瞭  |
+|   DPM adaptive    | 102.49s  |    A     |
+|    LMS Karras     |  12.47s  |    B     |
+|    DPM2 Karras    |  23.73s  |    B     |
+|   DPM2 a Karras   |  23.65s  |    C     |
+| DPM++ 2S a karras |  23.81s  |    B+    |
+|  DPM++ 2M karras  |  12.52s  |    A     |
+| DPM++ SDE Karras  |  25.52s  |    A     |
+|       DDIM        |  16.35s  |    B     |
+|       PLMS        |  12.24s  |  不明瞭  |
+|       UniPC       |  15.26s  |  不明瞭  |

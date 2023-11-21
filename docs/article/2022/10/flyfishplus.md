@@ -2,8 +2,10 @@
 title: NWでもカタパッドは片翼放置するのは避けるべきか
 date: 2022-10-06
 description: 前作ではカタパッドは無意味に放置するのは全く意味がないという結論に達した。今作ではそれがどのように変わったのかを検討してみます。
+category:
+  - Nintendo
 tag:
-  - Splatoon2
+  - Splatoon3
   - Salmon Run
 ---
 

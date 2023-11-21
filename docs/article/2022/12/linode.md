@@ -2,6 +2,11 @@
 title: Heroku vs Linode
 date: 2022-12-19
 description: HerokuとLinodeのどっちが良いのかを考えてみる会です
+category:
+  - Tech
+tag:
+  - Linode
+  - Heroku
 ---
 
 ## Heroku vs Linode

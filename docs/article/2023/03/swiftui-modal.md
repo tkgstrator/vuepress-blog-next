@@ -2,6 +2,11 @@
 title: SwiftUIでのモーダル表示はおとなしく公式を使うのが無難である件について
 date: 2023-03-27
 description: SwiftUIでモーダル表示をしたい場合、候補がsheetかfullScreenCoverしかありませんがこれらを使うのが無難であることの解説をします
+category:
+  - Programming
+tag:
+  - Swift
+  - SwiftUI
 ---
 
 ## SwiftUI でのモーダル表示

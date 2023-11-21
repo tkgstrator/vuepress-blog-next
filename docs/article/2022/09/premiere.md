@@ -2,12 +2,14 @@
 title: スプラトゥーン3前夜祭でLanPlayをする方法
 date: 2022-09-01
 description: スプラトゥーン3の前夜祭は終わってしまったのですが、LanPlayで遊ぶ方法について解説します
-category: 
-    - Hack
-    - Nintendo Switch
+category:
+  - Hack
+  - Nintendo
 tag:
+  - Nintendo Switch
   - Splatoon3
   - IPSwitch
+  - LanPlay
 ---
 
 ## スプラトゥーン 3 前夜祭

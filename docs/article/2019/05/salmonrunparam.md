@@ -5,7 +5,7 @@ description: サーモンランで使われているパラメータ、wikiにも
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - Splatoon2
   - Salmon Run
 ---

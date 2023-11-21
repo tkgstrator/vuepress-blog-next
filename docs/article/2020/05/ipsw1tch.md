@@ -5,7 +5,7 @@ description: IPSwitchのコード開発における面倒な手順をやって�
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - IPSwitch
 ---
 

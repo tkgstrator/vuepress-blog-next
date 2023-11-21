@@ -2,6 +2,12 @@
 title: スプラトゥーン3で利用される暗号、サーモンランを任意のシードで遊ぶまで
 date: 2023-02-10
 description: スプラトゥーン3で利用されている暗号化方式について解説します
+category:
+  - Nintendo
+  - Hack
+tag:
+  - Splatoon3
+  - Emulator
 ---
 
 ## スプラトゥーンの暗号化について

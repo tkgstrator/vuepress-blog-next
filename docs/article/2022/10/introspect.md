@@ -2,8 +2,9 @@
 title: SwiftUI+Introspect
 date: 2022-10-18
 description: Introspectを使ってSwiftUIをカスタマイズする話
-tag:
+category:
   - Programming
+tag:
   - SwiftUI
   - Swift
 ---

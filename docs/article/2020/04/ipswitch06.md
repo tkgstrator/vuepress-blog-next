@@ -5,7 +5,7 @@ description: ナイスやカモンを上書きしてリアルタイムイクラ�
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - IPSwitch
 ---
 
