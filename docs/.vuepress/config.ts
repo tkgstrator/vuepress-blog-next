@@ -1,7 +1,7 @@
-import { defineUserConfig } from 'vuepress'
+import { defineUserConfig } from "vuepress";
 import { blog, hopeTheme, pwa } from "vuepress-theme-hope";
 import { searchPlugin } from "@vuepress/plugin-search";
-import { viteBundler } from '@vuepress/bundler-vite'
+import { viteBundler } from "@vuepress/bundler-vite";
 
 export default defineUserConfig({
   lang: "en-US",
@@ -17,14 +17,19 @@ export default defineUserConfig({
       },
     ],
   ],
-  shouldPrefetch: false,
+  shouldPrefetch: true,
   plugins: [
     searchPlugin({
-      maxSuggestions: 10,
+      maxSuggestions: 20,
     }),
   ],
   theme: hopeTheme({
-    encrypt: {},
+    encrypt: {
+      global: false,
+    },
+    fullscreen: true,
+    pure: true,
+    darkmode: "switch",
     navbarAutoHide: "mobile",
     hotReload: true,
     headerDepth: 2,
@@ -36,12 +41,13 @@ export default defineUserConfig({
     lastUpdated: true,
     editLink: true,
     hostname: "https://tkgstrator.work",
+    author: "tkgling",
     plugins: {
       copyCode: {
-        showInMobile: false
+        showInMobile: false,
       },
       feed: {
-        json: true
+        json: true,
       },
       seo: true,
       pwa: false,
@@ -62,21 +68,21 @@ export default defineUserConfig({
     },
     blog: {
       sidebarDisplay: "none",
-      articlePerPage: 5,
+      articlePerPage: 10,
       avatar: "/ico_ep2_01.webp",
       name: "えいむーと愉快な仲間たち",
+      description: "最近どうもやる気がでません",
       roundAvatar: true,
       medias: {
         GitHub: "https://github.com/tkgstrator",
-        Twitter: "https://twitter.com/tkgling",
+        Twitter: "https://twitter.com/herlingum",
         Gmail: "nasawake.am@gmail.com",
-        Discord: "https://discordapp.com/users/430364540899819520"
+        Discord: "https://discordapp.com/users/430364540899819520",
       },
-    }
+    },
   }),
   bundler: viteBundler({
-    viteOptions: {
-    },
+    viteOptions: {},
     vuePluginOptions: {},
   }),
 });

@@ -7763,7 +7763,7 @@ __metadata:
     vuepress: "npm:2.0.0-rc.0"
     vuepress-theme-hope: "npm:2.0.0-rc.0"
     vuepress-vite: "npm:^2.0.0-rc.0"
-    wrangler: "npm:^3.1.0"
+    wrangler: "npm:^3.16.0"
   languageName: unknown
   linkType: soft
 
@@ -8056,7 +8056,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wrangler@npm:^3.1.0":
+"wrangler@npm:^3.16.0":
   version: 3.16.0
   resolution: "wrangler@npm:3.16.0"
   dependencies:
