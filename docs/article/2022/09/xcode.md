@@ -5,7 +5,7 @@ description: 秘密鍵を扱う場合、環境変数などを利用するのが�
 tag:
   - Swift
   - Xcode
-  - プログラミング
+  - Programming
 ---
 
 # 秘密鍵の取り扱い

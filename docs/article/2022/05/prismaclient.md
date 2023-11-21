@@ -2,10 +2,10 @@
 title: Prisma Clientの使い方を学ぶ
 date: 2022-05-09
 tag:
-  - プログラミング
+  - Programming
   - Typescript
   - NodeJS
-  - PostgresSQL
+  - PostgreSQL
   - Prisma
 ---
 
