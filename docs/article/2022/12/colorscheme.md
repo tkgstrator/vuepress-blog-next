@@ -2,6 +2,11 @@
 title: SwiftUIでアプリ全体のテーマを一括で切り替えたいなら`preferredColorScheme`を使ってはいけない件
 date: 2022-12-23
 description: SwiftUIでColorSchemeを利用すると伝播したりしなかったりするので解決方法をまとめます
+category:
+  - Programming
+tag:
+  - Swift
+  - SwiftUI
 ---
 
 ## ColorScheme について

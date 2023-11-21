@@ -2,6 +2,8 @@
 title: SwiftUI+Chart
 date: 2022-12-16
 description: SwiftUIでChartライブラリを使う方法についてまとめ
+category:
+  - Programming
 tag:
   - SwiftUI
   - Swift

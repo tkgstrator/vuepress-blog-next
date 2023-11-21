@@ -2,6 +2,8 @@
 title: "[リーク] サーモンランNWでのマッチメイキングを考える"
 date: 2022-09-02
 description: マッチングの格差が問題になっていたサーモンランですが、NWでどのように改善されるかを考察します
+category:
+  - Nintendo
 tag:
   - Splatoon2
   - Salmon Run

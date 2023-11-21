@@ -2,6 +2,8 @@
 title: 第二回タイヤ斬りつける大会結果発表
 date: 2022-08-22
 description: 栄光を手に入れたのは果たして誰でしょうか
+category:
+  - Nintendo
 tag:
   - Salmon Run
   - Splatoon2

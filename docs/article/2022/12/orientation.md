@@ -2,6 +2,10 @@
 title: Swiftにおけるデバイスの向き判定
 date: 2022-12-12
 description: Swiftでデバイスの向きを取得しようとするといろいろとややこしいので備忘録として残しておきます
+category:
+  - Programming
+tag:
+  - Swift
 ---
 
 ## Swift でデバイスの向きを正しく取得するには

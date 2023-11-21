@@ -2,7 +2,8 @@
 title: "[リーク] サーモンランの新情報"
 date: 2022-08-25
 description: サーモンラン Next Waveの情報について紹介します。リーク情報を含むので十分ご注意ください。
-
+category:
+  - Nintendo
 tag:
   - Salmon Run
 ---
