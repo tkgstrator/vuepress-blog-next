@@ -5,7 +5,7 @@ description: ガチマッチやナワバリバトルでの試合時間を変更�
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - Splatoon2
   - IPSwitch
 ---

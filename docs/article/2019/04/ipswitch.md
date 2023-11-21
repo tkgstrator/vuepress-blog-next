@@ -3,7 +3,7 @@ title: "[Hack] IPSwitchの使い方"
 date: 2019-04-01
 description: IPSwitchについて簡単に解説しています
 category: Hack
-tags:
+tag:
   - IPSwitch
 ---
 
@@ -27,7 +27,7 @@ IPSwitch とは pchtxt（パッチテキスト）を読み込み、IPS 形式の
 
 また、インターネットで誰かが公開しているものを使うという手も考えられます。
 
-[スプラトゥーン2 チートコード](https://takaharu422.github.io/Splatoon2.github.io/ja.html)
+[スプラトゥーン 2 チートコード](https://takaharu422.github.io/Splatoon2.github.io/ja.html)
 
 ## Switch 側の設定
 

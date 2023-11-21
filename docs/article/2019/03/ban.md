@@ -5,7 +5,7 @@ description: ニンテンドースイッチにおけるBANされる行為とさ�
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - Nintendo Switch
 ---
 

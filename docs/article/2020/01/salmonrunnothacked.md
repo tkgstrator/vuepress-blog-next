@@ -5,7 +5,7 @@ description: 改造機と非改造機の通信でできることとできない�
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - Salmon Run
 ---
 

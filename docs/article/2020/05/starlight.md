@@ -5,7 +5,7 @@ description: Dockerを用いたStarlightの導入ガイドです
 category:
   - Hack
   - Tech
-tags:
+tag:
   - Starlight
   - Ubuntu
   - Docker

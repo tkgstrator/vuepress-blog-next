@@ -5,7 +5,7 @@ description: スプラトゥーンで行われているチートの種類と、�
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - Nintendo Switch
   - Splatoon2
 ---

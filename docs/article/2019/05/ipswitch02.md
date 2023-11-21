@@ -5,7 +5,7 @@ description: 任意の値をレジスタにセットして、反映させるた�
 category:
   - Nintendo
   - Hack
-tags:
+tag:
   - Splatoon2
   - IPSwitch
 ---
