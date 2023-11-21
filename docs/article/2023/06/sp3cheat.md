@@ -2,10 +2,12 @@
 title: スプラトゥーン3で公開されているパッチを確認する 
 date: 2023-06-20
 description: IPSwitch向けのパッチを確かめてみることにしました
-tag:
-    - Splatoon3
 category:
-    - IPSwitch
+  - Nintendo
+  - Hack
+tag:
+  - Splatoon3
+  - IPSwitch
 ---
 
 ## IPSwitch

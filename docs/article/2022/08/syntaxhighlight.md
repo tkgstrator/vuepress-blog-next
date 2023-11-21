@@ -2,8 +2,9 @@
 title: Denoにシンタックスハイライトをつける
 date: 2022-08-29
 description: Denoではデフォルトでシンタックスハイライトが効くはずなのですが、なぜか効かなかったのでその対応方法について書きます
-tag:
+category:
   - Programming
+tag:
   - Deno
 ---
 

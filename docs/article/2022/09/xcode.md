@@ -2,10 +2,11 @@
 title: Xcodeで秘密鍵をソースコードにベタ書きしたいとき
 date: 2022-09-21
 description: 秘密鍵を扱う場合、環境変数などを利用するのが一般的ですがXcodeではどうすればいいのか考えてみました
+category:
+  - Programming
 tag:
   - Swift
   - Xcode
-  - Programming
 ---
 
 # 秘密鍵の取り扱い
