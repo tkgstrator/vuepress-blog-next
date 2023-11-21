@@ -2,9 +2,10 @@
 title: スプラトゥーン3をプログラマ視点で語る
 date: 2022-09-25
 description: スプラトゥーン3が発売されて二週間あまりが経ちましたが、今後どうなっていくのか、プログラマとしての視点から解説しようと思います
+category:
+  - Programming
 tag:
   - Splatoon2
-  - Programming
 ---
 
 ## スプラトゥーンの完成度について

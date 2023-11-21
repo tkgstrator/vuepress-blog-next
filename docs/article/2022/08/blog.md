@@ -2,8 +2,9 @@
 title: ブログ移行しました
 date: 2022-08-22
 description: VuePressに希望がなさすぎました
-tag:
+category:
   - Programming
+tag:
   - Deno
 ---
 
