@@ -2,7 +2,8 @@
 title: Alignmentが全然わからん
 date: 2021-05-12
 description: SwiftUIでのAlignmentについての調査をまとめてみました
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

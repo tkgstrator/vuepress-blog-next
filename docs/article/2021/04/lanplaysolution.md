@@ -209,7 +209,7 @@ LAN ケーブルの長さは環境によりけりなのですが、1m から 1.5
 
 自分が接続できているかは以下の URL からも確認できます。
 
-[ここの数字](http://ec2-13-231-102-57.ap-northeast-1.compute.amazonaws.com:11451/info)が増えれば接続できています。
+[ここの数字](http://lanplay.splatnet3.com:11451/info)が増えれば接続できています。
 
 それではみなさん、良き LanPlay ライフをお楽しみください。
 

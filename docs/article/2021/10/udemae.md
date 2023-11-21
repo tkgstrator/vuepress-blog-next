@@ -2,7 +2,10 @@
 title: ウデマエメーターが割れる仕組み
 date: 2021-10-08
 description: スプラトゥーン2におけるウデマエメーターの仕組みについて海外のハッカーの解析を元に、それを翻訳しつつ解説します
-category: Splatoon2
+category: 
+  - Nintendo
+tag:
+  - Splatoon2
 ---
 
 # ウデマエの仕組み

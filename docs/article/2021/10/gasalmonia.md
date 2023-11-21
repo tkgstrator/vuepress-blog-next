@@ -2,7 +2,8 @@
 title: GitHub ActionsでSalmoniaを実行してみた
 date: 2021-10-01
 description: SalmoniaをGASで実行することができるかどうか
-category: プログラミング
+category:
+  - Programming
 tag:
   - Python
   - GitHub

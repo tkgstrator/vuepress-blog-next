@@ -2,9 +2,10 @@
 title: ITMS-90626のエラーを解消した話
 date: 2021-09-20
 description: App Store Connect(以下ASC)からのエラーメールが届くこの対処について解説
-category: Xcode
+category: 
+  - Programming
 tag:
-  - Apple
+  - Xcode
 ---
 
 # ITMS-90626 とは

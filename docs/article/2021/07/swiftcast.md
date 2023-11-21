@@ -2,7 +2,8 @@
 title: Swiftでの型のキャストを理解せよ
 date: 2021-07-28
 description: キャスト
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

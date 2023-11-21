@@ -2,9 +2,13 @@
 title: 湧き方向アルゴリズム完全に理解した
 date: 2021-11-06
 description: オオモノシャケの湧き方向を予め予測することはできたのですが、より深い解析が進んだので発表します
-categoriy: プログラミング
+categoriy: 
+  - Programming
+  - Nintendo
+  - Hack
 tag:
-  - サーモンラン
+  - Splatoon2
+  - Salmon Run
 ---
 
 # 湧き方向アルゴリズム

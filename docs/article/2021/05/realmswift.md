@@ -2,7 +2,8 @@
 title: Realm + SwiftUI
 date: 2021-05-25
 description: RealmをSwiftUIで使うためのチュートリアル
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - Realm

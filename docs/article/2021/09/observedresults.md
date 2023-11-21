@@ -2,7 +2,8 @@
 title: ObservedResultsの使い方について
 date: 2021-09-27
 description: Realm + SwiftUIの決定版ともいうべきObservedResultsについて調査してみました
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - SwiftUI

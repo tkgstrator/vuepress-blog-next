@@ -2,7 +2,8 @@
 title: ガチホコシミュレータ
 date: 2021-05-31
 description: マップ上の好きな位置をタップすればガチホコのカウントが表示されるガチホコシミュレータについて
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - SwiftUI

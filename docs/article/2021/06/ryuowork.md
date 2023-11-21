@@ -2,7 +2,8 @@
 title: りゅうおうのおしごとの必勝法
 date: 2021-06-26
 description: ニンテンドースイッチで販売されているりゅうおうのおしごとの対局での必勝法まとめ
-category: 将棋
+category:
+  - Shogi
 tag:
   - 横歩取り
 ---

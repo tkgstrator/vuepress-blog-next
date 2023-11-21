@@ -2,7 +2,8 @@
 title: SwiftLintでコーディング規約に準拠しよう
 date: 2021-06-22
 description: SwiftLintでプロジェクトのコードを修正していく手順について解説
-category: プログラミング
+category:
+  - Programming
 tag:
   - Xcode
 ---

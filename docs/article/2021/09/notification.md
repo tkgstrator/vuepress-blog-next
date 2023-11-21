@@ -2,7 +2,8 @@
 title: SwiftUIでループ途中の経過を返す方法
 date: 2021-09-13
 description: SwiftUIで作業の進行具合を返す方法を考えてみました
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - SwiftUI

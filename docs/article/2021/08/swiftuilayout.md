@@ -2,7 +2,8 @@
 title: SwiftUIでレイアウトを切り替える方法
 date: 2021-08-19
 description: SwiftUIでデバイスや傾きごとにレイアウトを変更したい場合のコーディングについて学びます
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - SwiftUI

@@ -2,7 +2,8 @@
 title: Swiftでのプロパティの種類について
 date: 2021-07-05
 description: Swiftで利用可能なプロパティについて学びます
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

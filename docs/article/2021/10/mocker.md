@@ -2,7 +2,8 @@
 title: Mockerでテスト環境をつくる
 date: 2021-10-01
 description: APIテストをMockerでどうにかしてみます
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

@@ -2,7 +2,8 @@
 title: Xcodeで使えるTipsあれこれ
 date: 2021-08-31
 description: Xcodeで利用できるおまけ機能的な便利な機能を紹介します
-category: プログラミング
+category:
+  - Programming
 tag:
   - Xcode
   - Swift

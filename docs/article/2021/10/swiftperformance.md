@@ -1,7 +1,8 @@
 ---
 title: Swift-Benchmarkで実行速度を調査する
 date: 2021-10-18
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

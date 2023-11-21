@@ -2,7 +2,8 @@
 title: RealmCocoaがまたアップデートしてるんだが
 date: 2021-07-08
 description: RealmSwiftがアップデートされて大幅に変更されていました
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - RealmSwift

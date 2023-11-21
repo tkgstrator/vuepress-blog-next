@@ -1,7 +1,8 @@
 ---
 title: SwiftUIでアニメーションを実装してみる
 date: 2021-06-14
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - SwiftUI

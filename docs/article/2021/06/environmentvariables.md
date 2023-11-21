@@ -2,7 +2,8 @@
 title: Xcodeで環境変数を読み込む方法
 date: 2021-06-04
 description: Xcodeで環境変数を読み込むための方法についていくつかのパターンに分けて解説します
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

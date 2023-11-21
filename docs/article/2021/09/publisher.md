@@ -2,7 +2,8 @@
 title: Publisherを使いこうなそう
 date: 2021-09-13
 description: 標準的な関数をPublisher型に変換することで便利に利用できます
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - SwiftUI

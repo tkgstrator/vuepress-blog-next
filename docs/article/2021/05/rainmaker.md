@@ -2,7 +2,8 @@
 title: ガチホコシミュレータはどうすれば可能か
 date: 2021-05-07
 description: マップ上の好きな位置をタップすればガチホコのカウントが表示されるガチホコシミュレータの実装方法について
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

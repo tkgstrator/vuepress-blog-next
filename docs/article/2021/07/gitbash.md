@@ -2,7 +2,8 @@
 title: Gitコマンドをより便利に利用する
 date: 2021-07-14
 description: ターミナルでGitコマンドの補完が効くようにするための方法です
-category: プログラミング
+category:
+  - Programming
 tag:
   - Git
 ---

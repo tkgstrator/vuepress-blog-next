@@ -2,7 +2,8 @@
 title: 非同期処理と同期処理
 date: 2021-05-17
 description: Swiftで非同期処理と同期処理を扱います
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

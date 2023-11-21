@@ -2,7 +2,8 @@
 title: Realmでレコードを削除するとクラッシュする問題
 date: 2021-05-24
 description: Realmでレコードを削除するとアプリがクラッシュしてしまう場合があるのですが、今回は何故クラッシュするのか、対策と解決策について考えます
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - Realm

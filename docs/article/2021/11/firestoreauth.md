@@ -2,7 +2,8 @@
 title: FirestoreAuthでTwitterログインしよう
 date: 2021-11-24
 description: FirestoreAuth+SwiftUIでログインするためのコードの書き方について解説
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - Firestore

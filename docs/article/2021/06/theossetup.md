@@ -2,7 +2,8 @@
 title: 脱獄Tweakを作成できるTHEOSのセットアップ方法
 date: 2021-06-21
 description: THEOSは脱獄Tweakを作成できるのですが、そのセットアップ方法をまとめました
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

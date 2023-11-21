@@ -2,8 +2,10 @@
 title: 将棋検討ソフトをmacOSに導入する
 date: 2021-07-18
 description: 将棋検討ソフトはWindows用のものが多いですが、macOSでも動かせるか試してみました
-category: 将棋
+category: 
+  - Shogi
 tag:
+  - macOS
 ---
 
 # 将棋検討ソフト

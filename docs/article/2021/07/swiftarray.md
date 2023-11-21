@@ -2,7 +2,8 @@
 title: Swiftでの配列に対する操作まとめ
 date: 2021-07-12
 description: いつも配列でやりたいことの実装方法を忘れてしまうので備忘録としてまとめておきます
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

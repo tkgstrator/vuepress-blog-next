@@ -2,7 +2,8 @@
 title: えいむーさんが評価するプログラミング言語
 date: 2021-10-11
 description: ぼくが触った中で今学ぶべきプログラミング言語をまとめていきます
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - Python

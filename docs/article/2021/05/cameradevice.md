@@ -2,7 +2,8 @@
 title: SwiftUIでカメラを使うのがよくわからない問題
 date: 2021-05-10
 description: カメラデバイスを利用するためのチュートリアルを解説してみました
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

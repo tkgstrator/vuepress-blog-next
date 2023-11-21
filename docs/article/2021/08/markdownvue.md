@@ -2,7 +2,8 @@
 title: VuepressでMarkdownに直接コンポーネントを読み込む方法
 date: 2021-08-02
 description: VuepressでVueコンポーネントを利用する方法について解説します
-category: プログラミング
+category:
+  - Programming
 tag:
   - Vue
   - Javascript

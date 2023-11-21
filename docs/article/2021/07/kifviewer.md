@@ -2,9 +2,10 @@
 title: KifuViewerをVuepressに対応させた
 date: 2021-08-01
 description: HTML5で駒を動かせるKifuViewerをVuepressで対応させるまでの流れを解説
-category: プログラミング
+category: 
+  - Programming
 tag:
-  - 将棋
+  - Shogi
 ---
 
 # KifuViewer

@@ -1,7 +1,8 @@
 ---
 title: Swift+Moya+Alamofire
 date: 2021-11-01
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

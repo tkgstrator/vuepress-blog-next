@@ -2,7 +2,8 @@
 title: AWS+Pythonで簡易APIを立てよう
 date: 2021-10-04
 description: APIは普通はPythonでは立てないと思うのですが、立てられるときいたのでAWSで試してみました
-category: プログラミング
+category:
+  - Programming
 tag:
   - Python
   - AWS

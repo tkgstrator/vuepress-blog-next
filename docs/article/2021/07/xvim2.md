@@ -2,7 +2,8 @@
 title: BigSur + XVim2
 date: 2021-07-05
 description: XVim2はBigSurだとバグが発生していたのですが、その解決法が載っていたのでご紹介します
-category: 話題
+category: 
+  - Programming
 tag:
   - Xcode
 ---

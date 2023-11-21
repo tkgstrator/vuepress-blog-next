@@ -2,7 +2,8 @@
 title: GitHub Actionsで定期実行しよう
 date: 2021-09-16
 description: 北米版のBD販売予定リストを自動更新するコードについて解説します
-category: プログラミング
+category:
+  - Programming
 tag:
   - Python
 ---

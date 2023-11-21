@@ -2,7 +2,8 @@
 title: グラフノードを変換しよう
 date: 2021-05-07
 description: スプラトゥーンで利用されているグラフノードはXMLで与えられているのでこれをグラフとて利用できるように変換するための手順を解説します
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
 ---

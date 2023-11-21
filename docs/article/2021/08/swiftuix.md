@@ -2,7 +2,8 @@
 title: SwiftUIXの実力を確かめてみた
 date: 2021-08-25
 description: SwiftUIの拡張ライブラリであるSwiftUIXを実際に使ってみました
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - SwiftUI

@@ -2,7 +2,8 @@
 title: SwiftからPythonを実行させてみる
 date: 2021-08-15
 description: SwiftのアプリケーションにPythonプログラムを組み込むことはできるのか挑戦してみました
-category: プログラミング
+category:
+  - Programming
 tag:
   - Swift
   - Python
