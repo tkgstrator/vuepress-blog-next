@@ -1,5 +1,5 @@
 ---
-title: "[IPSwitch] 誰でもできるコード開発 #5"
+title: "誰でもできるコード開発 #5"
 date: 2019-09-12
 description: ガチマッチやナワバリバトルでの試合時間を変更するコードについて解説しています
 category:
@@ -10,13 +10,13 @@ tags:
   - IPSwitch
 ---
 
-# [IPSwitch] 誰でもできるコード開発 #5
+# 誰でもできるコード開発 #5
 
 ## はじめに
 
 今回の内容は以下の記事の続きになります。
 
-[[IPSwitch] 誰でもできるコード開発 #4](https://tkgstrator.work/posts/2019/07/07/ipswitch04.html)
+[誰でもできるコード開発 #4](https://tkgstrator.work/posts/2019/07/07/ipswitch04.html)
 
 この記事を読むにあたって必ず目を通して理解しておいてください。
 

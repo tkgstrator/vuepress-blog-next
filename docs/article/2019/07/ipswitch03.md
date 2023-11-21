@@ -1,5 +1,5 @@
 ---
-title: "[IPSwitch] 誰でもできるコード開発 #3"
+title: "誰でもできるコード開発 #3"
 date: 2019-07-02
 description: 関数の返り値自体を変更して、イカッチャのナゾの声をクマサンに変更する方法を解説しています
 category:
@@ -11,13 +11,13 @@ tags:
   - IDA Pro
 ---
 
-# [IPSwitch] 誰でもできるコード開発 #3
+# 誰でもできるコード開発 #3
 
 ## はじめに
 
 今回の内容は以下の記事の続きになります。
 
-[[IPSwitch] 誰でもできるコード開発 #2](https://tkgstrator.work/posts/2019/05/09/ipswitch02.html)
+[誰でもできるコード開発 #2](https://tkgstrator.work/posts/2019/05/09/ipswitch02.html)
 
 この記事を読むにあたって必ず目を通して理解しておいてください。
 
