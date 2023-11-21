@@ -6,7 +6,6 @@ category:
   - Hack
 tag:
   - Nintendo Switch
-  - NSP
 ---
 
 ## ダウングレードの必要性
