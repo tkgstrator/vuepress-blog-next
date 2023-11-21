@@ -6,7 +6,6 @@ category:
   - Nintendo
   - Hack
 tag:
-  - Nintendo Switch
   - Splatoon2
   - IPSwitch
 ---
