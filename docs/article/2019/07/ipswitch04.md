@@ -1,5 +1,5 @@
 ---
-title: "[IPSwitch] 誰でもできるコード開発 #4"
+title: "誰でもできるコード開発 #4"
 date: 2019-07-07
 description: BYAMLなどの暗号化されたXMLのデータを読み取ってその値を変更する方法について解説しています
 category:
@@ -10,13 +10,13 @@ tag:
   - IPSwitch
 ---
 
-# [IPSwitch] 誰でもできるコード開発 #4
+# 誰でもできるコード開発 #4
 
 ## はじめに
 
 今回の内容は以下の記事の続きになります。
 
-[[IPSwitch] 誰でもできるコード開発 #3](https://tkgstrator.work/posts/2019/07/02/ipswitch03.html)
+[誰でもできるコード開発 #3](https://tkgstrator.work/posts/2019/07/02/ipswitch03.html)
 
 この記事を読むにあたって必ず目を通して理解しておいてください。
 
