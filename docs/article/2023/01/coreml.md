@@ -2,6 +2,10 @@
 title: Core MLについての備忘録
 date: 2023-01-20
 description: Core MLについて学習したのでそれをまとめます
+category:
+  - Programming
+tag:
+  - Swift
 ---
 
 ## Core ML とは

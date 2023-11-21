@@ -2,6 +2,12 @@
 title: M1 MacでRyujinxを動かす
 date: 2023-01-28
 description: ニンテンドースイッチエミュレータがmacOSに対応していたので遊んでみました
+category:
+  - Nintendo
+  - Hack
+tag:
+  - Nintendo Switch
+  - Emulator
 ---
 
 ## [Ryujinx](https://ryujinx.org/)

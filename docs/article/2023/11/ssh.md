@@ -2,19 +2,24 @@
 title: 突然SSHが繋がらなくなっちゃった話
 date: 2023-11-18
 description: macOSからSSHが繋がらなくなっちゃった時の原因と解決法について
+category:
+  - Tech
+tag:
+  - macOS
+  - SSH
 ---
 
 ## 背景
 
-SSHが繋がらなくなっちゃった。
+SSH が繋がらなくなっちゃった。
 
-Linodeで契約しているサーバーに、rootとは異なるアカウント(tkgling)を作成しそのアカウントにログインを試みる。
+Linode で契約しているサーバーに、root とは異なるアカウント(tkgling)を作成しそのアカウントにログインを試みる。
 
 ```zsh
 tkgling@xxx.xxx.xxx.xxx: Permission denied (publickey,password).
 ```
 
-まず、~~パスワード認証はしていない~~と勘違いしていたのでpasswordと表示されるのが不可解。
+まず、~~パスワード認証はしていない~~と勘違いしていたので password と表示されるのが不可解。
 
 ### config
 
@@ -34,7 +39,7 @@ Host *
 
 #### ログインできない理由
 
-Linodeはインスタンス作成時に何故かrootでかつパスワードログインができる、かつ公開鍵認証が無効化されているという謎仕様になっている。
+Linode はインスタンス作成時に何故か root でかつパスワードログインができる、かつ公開鍵認証が無効化されているという謎仕様になっている。
 
 なので`Host *`に対して`PreferredAuthentications publickey`の設定が有効化されていると詰んでしまうというわけです。
 
@@ -50,7 +55,7 @@ ssh-copy-id -i ~/.ssh/id_ed25519 tkgling@xxx.xxx.xxx.xxx
 
 するとパスワード入力後に鍵が登録される。
 
-できたら`sudoedit /etc/ssh/sshd_config`でSSH接続設定を変更します。変更しないと脆弱なままなので注意。
+できたら`sudoedit /etc/ssh/sshd_config`で SSH 接続設定を変更します。変更しないと脆弱なままなので注意。
 
 ```zsh
 PubkeyAuthentication yes
@@ -62,8 +67,8 @@ PermitEmptyPasswords no
 
 `systemctl restart sshd`で設定を反映させましょう。
 
-[Linode で仮想マシンを作ったらまずやること](https://qiita.com/tarooishi/items/5f8ec51323eeed919818)のようにStackScriptsを作成してしまっても良いです。
+[Linode で仮想マシンを作ったらまずやること](https://qiita.com/tarooishi/items/5f8ec51323eeed919818)のように StackScripts を作成してしまっても良いです。
 
-`sudo apt install sshguard`を入れておくとログイン試行してくる人をBANできるのでより安全になります。
+`sudo apt install sshguard`を入れておくとログイン試行してくる人を BAN できるのでより安全になります。
 
 記事は以上。

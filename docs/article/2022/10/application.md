@@ -2,8 +2,10 @@
 title: Salmonia3のアンケート結果
 date: 2022-10-14
 description: アンケート結果とそれに対する対応をまとめます
+category:
+  - Nintendo
 tag:
-  - Splatoon2
+  - Salmonia3+
   - Salmon Run
 ---
 
@@ -68,7 +70,7 @@ tag:
 - 仲間の名前を非表示にできること
 - UI がシンプルなこと
 - 要望が反映されやすいこと
-- Salmon Runに特化していること
+- Salmon Run に特化していること
 - 保存してあればすぐにリザルトが見れること
 
 リザルトの無制限保存のご意見が最も多く、現状 Salmonia3+の唯一イカリング 3 に勝っている点なのでそこが一番評価いただいているようでした。

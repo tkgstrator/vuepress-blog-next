@@ -1,7 +1,9 @@
 ---
-title: IonicのModalの様子がちょっとおかしいんだが 
+title: IonicのModalの様子がちょっとおかしいんだが
 date: 2023-07-21
 description: クロスコンパイルに対応しているIonicのモーダルについて理解を深めます
+category:
+  - Tech
 ---
 
 ## 背景
@@ -11,4 +13,3 @@ description: クロスコンパイルに対応しているIonicのモーダル�
 ### Inline Modals
 
 推奨と出てくる方法がこれ。
-

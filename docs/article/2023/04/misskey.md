@@ -2,6 +2,10 @@
 title: Misskeyの自鯖を建てるための解説
 date: 2023-04-12
 description: これだけ読んでおけば大丈夫な解説内容にしたい
+category:
+  - Tech
+tag:
+  - Docker
 ---
 
 ## Twitter is dead
@@ -188,7 +192,7 @@ cp ./docker-compose.yml.example ./docker-compose.yml
 #### docker-compose.yml
 
 ```yaml
-version: '3'
+version: "3"
 
 services:
   web:
@@ -203,7 +207,7 @@ services:
       redis:
         condition: service_healthy
     ports:
-      - '3000:3000'
+      - "3000:3000"
     networks:
       - internal_network
       - external_network
@@ -224,7 +228,7 @@ services:
     volumes:
       - ./redis:/data
     healthcheck:
-      test: 'redis-cli ping'
+      test: "redis-cli ping"
       interval: 5s
       retries: 20
 
@@ -238,7 +242,7 @@ services:
     volumes:
       - ./db:/var/lib/postgresql/data
     healthcheck:
-      test: 'pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB'
+      test: "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"
       interval: 5s
       retries: 20
 

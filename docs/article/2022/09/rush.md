@@ -2,6 +2,8 @@
 title: ノルマ不足で負けたければアラマキ砦でセミし続けるべきである
 date: 2022-09-14
 description: サーモンランNWがいよいよ解禁されましたが、さっそく全く使えない戦法が攻略法として出回っています。
+category:
+  - Nintendo
 tag:
   - Splatoon3
   - Salmon Run

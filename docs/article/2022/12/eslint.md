@@ -2,6 +2,11 @@
 title: NestJSでREST API開発時に使える設定とかまとめ
 date: 2022-12-29
 description: ESLintやPrettierでどんな設定を追加すればいいかわからなかったのでいろいろ参考にしてみました
+category:
+  - Programming
+tag:
+  - Javascript
+  - Typescript
 ---
 
 ## 背景
