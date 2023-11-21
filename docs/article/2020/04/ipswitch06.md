@@ -1,5 +1,5 @@
 ---
-title: "[IPSwitch] 誰でもできるコード開発 #6"
+title: "誰でもできるコード開発 #6"
 date: 2020-04-30
 description: ナイスやカモンを上書きしてリアルタイムイクラ取得をする方法について解説しています
 category:
@@ -9,13 +9,13 @@ tags:
   - IPSwitch
 ---
 
-# [IPSwitch] 誰でもできるコード開発 #6
+# 誰でもできるコード開発 #6
 
 ## はじめに
 
 今回の内容は以下の記事の続きになります。
 
-[[IPSwitch] 誰でもできるコード開発 #5](https://tkgstrator.work/posts/2019/09/12/ipswitch05.html)
+[誰でもできるコード開発 #5](https://tkgstrator.work/posts/2019/09/12/ipswitch05.html)
 
 この記事を読むにあたって必ず目を通して理解しておいてください。
 

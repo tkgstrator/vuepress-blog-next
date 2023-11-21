@@ -1,5 +1,5 @@
 ---
-title: "[IPSwitch] 誰でもできるコード開発 #7"
+title: "誰でもできるコード開発 #7"
 date: 2020-05-27
 description: ナイスやカモンを上書きしてリアルタイムチーム変更をする方法について解説しています
 category:
@@ -10,13 +10,13 @@ tags:
   - Starlight
 ---
 
-# [IPSwitch] 誰でもできるコード開発 #7
+# 誰でもできるコード開発 #7
 
 ## はじめに
 
 今回の内容は以下の記事の続きになります。
 
-[[IPSwitch] 誰でもできるコード開発 #6](https://tkgstrator.work/posts/2020/04/30/ipswitch06.html)
+[誰でもできるコード開発 #6](https://tkgstrator.work/posts/2020/04/30/ipswitch06.html)
 
 この記事を読むにあたって必ず目を通して理解しておいてください。
 

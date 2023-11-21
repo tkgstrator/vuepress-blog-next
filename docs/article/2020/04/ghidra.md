@@ -1,5 +1,5 @@
 ---
-title: "[IPSwitch] Ghidraでのコード移植"
+title: "Ghidraでのコード移植"
 date: 2020-04-20
 description: NSAが公開した逆アセンブラツールであるGhidraを使ってIPSwitchのコードを別バージョンに移植するための手順や注意点について簡単に解説しています
 category:

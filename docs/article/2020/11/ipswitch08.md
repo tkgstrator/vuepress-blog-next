@@ -1,5 +1,5 @@
 ---
-title: "[IPSwitch] 誰でもできるコード開発 #8"
+title: "誰でもできるコード開発 #8"
 date: 2020-11-02
 description: ナイスやカモンを上書きしてリアルタイムスペシャル変更をする方法について解説しています
 category:
@@ -10,13 +10,13 @@ tags:
   - IPSwitch
 ---
 
-# [IPSwitch] 誰でもできるコード開発 #8
+# 誰でもできるコード開発 #8
 
 ## はじめに
 
 今回の内容は以下の記事の続きになります。
 
-[[IPSwitch] 誰でもできるコード開発 #7](https://tkgstrator.work/posts/2020/05/27/ipswitch07.html)
+[誰でもできるコード開発 #7](https://tkgstrator.work/posts/2020/05/27/ipswitch07.html)
 
 この記事を読むにあたって必ず目を通して理解しておいてください。
 

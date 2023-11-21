@@ -1,9 +1,11 @@
 ---
-title: "[IPSwitch] 最新ベータ版を触ってみた"
+title: "IPSwitchの最新ベータ版を触ってみた"
 date: 2020-06-01
 description: IPSwitchのベータ版使ってみた感想
-category: Hack
-tag: IPSwitch
+category: 
+  - Hack
+tag: 
+  - IPSwitch
 ---
 
 ## IPSwitch
