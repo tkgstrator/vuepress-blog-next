@@ -22,7 +22,7 @@ SwiftUI で Picker 機能（複数の中から一つを選択させる）を実�
 
 [サポートページ](https://tkgstrator.work/support/)から PayPal や PayPay やほしいものリストでえいむーさんを応援することができるのですが、今月いろいろご支援いただいているのでいろいろご紹介。
 
-<Amazon/>
+
 
 ### [@mado_a さん](https://twitter.com/mado_a)
 
@@ -44,7 +44,7 @@ SwiftUI で Picker 機能（複数の中から一つを選択させる）を実�
 
 [コカコーラ](https://www.amazon.co.jp/dp/B004Y9IXZW)を送っていただきました！
 
-<Amazon/>
+
 
 ## 今後の方針
 
@@ -56,4 +56,4 @@ SwiftUI で Picker 機能（複数の中から一つを選択させる）を実�
 
 記事は以上。
 
-<Amazon/>
+

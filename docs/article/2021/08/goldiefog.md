@@ -103,4 +103,4 @@ __int64 __fastcall sub_4A7BD0(__int64 this, __int64 a2)
 
 記事は以上。
 
-<Amazon/>
+

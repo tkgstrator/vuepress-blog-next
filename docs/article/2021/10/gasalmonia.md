@@ -41,7 +41,7 @@ GitHub アクションでは、カスタムソフトウェア開発のライフ�
 
 :::
 
-<Amazon />
+
 
 ## [Salmonia for GitHub Actions](https://github.com/tkgstrator/Salmonia-GA)
 
@@ -123,4 +123,4 @@ JSON を読み込んで簡易的なリザルトビューワとして使えるの
 
 記事は以上。
 
-<Amazon />
+

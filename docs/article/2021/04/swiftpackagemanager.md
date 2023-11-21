@@ -119,8 +119,6 @@ let package = Package(
 
 JSON ファイル自体は多分どこでもいいんだろうけれど、`Resources`においておくのが無難ではないかと思っている。
 
-![](/assets/images/07.png)
-
 ## ローカルファイル読み込み
 
 ```swift

@@ -15,7 +15,7 @@ tag:
 - [GitHub Actions が便利すぎた](https://tkgstrator.work/posts/2021/05/06/githubactions.html)
 - [GitHub Actions で Netlify のビルド時間を浮かせよう](https://tkgstrator.work/posts/2021/05/06/netlifybuild.html)
 
-<Amazon/>
+
 
 ## [北米版 BD 販売予定リスト](https://rightstuf-release.netlify.app/)
 
@@ -182,4 +182,4 @@ jobs:
 
 記事は以上。
 
-<Amazon/>
+

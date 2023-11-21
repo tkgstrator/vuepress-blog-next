@@ -17,7 +17,7 @@ SwiftUI で不足している機能やコンポーネントを補完するため
 
 明らかに内容が足りていないです。
 
-<Amazon/>
+
 
 ## コンポーネント
 
@@ -290,4 +290,4 @@ UserInterfaceOrientation.current
 
 記事は以上。
 
-<Amazon/>
+

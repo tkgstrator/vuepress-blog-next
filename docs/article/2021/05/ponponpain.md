@@ -26,7 +26,7 @@ category:
 
 いや、これはもう完全に ponponpain を支えてますね、はい。
 
-<Amazon/>
+
 
 ## ponponpain を支える技術
 

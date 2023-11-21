@@ -17,7 +17,7 @@ tag:
 
 そのために`@ObservableObject`や`freeze`でごにょごにょしなきゃいけなかったのですが、それら全てから開放されるのがこの`@ObservedResults`になります。
 
-<Amazon />
+
 
 ## 基本的な使い方
 
@@ -211,4 +211,4 @@ struct ContentView: View {
 
 記事は以上。
 
-<Amazon />
+

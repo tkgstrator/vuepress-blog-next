@@ -10,7 +10,7 @@ category:
 
 [@bagder](https://twitter.com/bagder)氏により投稿されたツイート。
 
-<blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Never forget: every base is base 10. <a href="https://t.co/vY7l5vLHAB">https://t.co/vY7l5vLHAB</a> <a href="https://t.co/Utu1EH1CWc">pic.twitter.com/Utu1EH1CWc</a></p>&mdash; Daniel 🥌 Stenberg (@bagder) <a href="https://twitter.com/bagder/status/1389605985422036994?ref_src=twsrc%5Etfw">May 4, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/bagder/status/1389605985422036994
 
 ::: tip 基数について
 
@@ -22,7 +22,7 @@ Never forget: every base is base 10
 
 これはある意味不可解なように感じられる。なぜなら我々は基数が 10 である 10 進法以外にも 16 進法などを使いこなしているからだ。何故全ての基数が 10 なのだろう？
 
-<Amazon/>
+
 
 ## 問題の場面
 

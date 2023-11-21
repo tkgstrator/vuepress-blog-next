@@ -21,7 +21,7 @@ Webhook の API を VuePress で利用したい場合、ソースコードに埋
 
 このとき、ローカルファイルの環境変数が書かれたファイルを Git で Push しては意味がないので`.gitignore`に追加するのを忘れないようにしましょう。
 
-<Amazon/>
+
 
 ## dotenv のインストール
 
@@ -146,4 +146,4 @@ export default {
 
 記事は以上。
 
-<Amazon/>
+
