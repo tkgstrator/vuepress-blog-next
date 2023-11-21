@@ -1,7 +1,7 @@
 ---
-title: yarnのバージョン管理をする 
+title: yarn v2をつかってみる
 date: 2023-11-22
-description: yarnのバージョン管理をします
+description: yarn v2への移行を実際に試してみました
 category:
   - Tech
 tag:
@@ -11,10 +11,11 @@ tag:
 
 ## 背景
 
-Yarnにはバージョン1とバージョン2(Berry)があり以下の点を解決している模様。
+Yarnにはバージョン1とバージョン2(Berry)がありnode_modulesの肥大化を解決している模様。
 
-- node_modulesの肥大化対策
-- 
+キャッシュも利用していて、キャッシュが効く場合にはインストールもそれなりに速いらしいです。
+
+> 効かない場合はむしろ依存関係の問題？でv1の方が10倍くらい速いときもある、謎
 
 ### バージョン確認
 
@@ -33,8 +34,8 @@ yarn set version berry
 
 を実行すると同一ディレクトリ配下に、
 
-- .yarn/
-- .yarnrc.yml
+- `.yarn/`
+- `.yarnrc.yml`
 
 が作成されます。再度バージョンを確認すると、
 
@@ -115,7 +116,7 @@ yarn workspaces focus --all --production
 
 その場合、上のコマンドで代用可能なのでこちらを利用しましょう。
 
-### Docker
+### GitHub Actions
 
 GitHub ActionsでSSGをビルドする際にデフォルトではyarnが入っていなかったので`npm install -g yarn`でわざわざインストールしていたのですが、これを`npm install -g yarn@2`と変更します。
 
@@ -149,3 +150,5 @@ jobs:
         if: ${{ steps.cache_cdk_dependency_id.outputs.cache-hit != 'true' }}
         run: yarn --immutable --immutable-cache
 ```
+
+記事は以上。
