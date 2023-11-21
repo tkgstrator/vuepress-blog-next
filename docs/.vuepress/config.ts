@@ -1,5 +1,5 @@
 import { defineUserConfig } from "vuepress";
-import { blog, hopeTheme, pwa } from "vuepress-theme-hope";
+import { blog, hopeTheme, mdEnhance, pwa } from "vuepress-theme-hope";
 import { searchPlugin } from "@vuepress/plugin-search";
 import { viteBundler } from "@vuepress/bundler-vite";
 
@@ -54,6 +54,9 @@ export default defineUserConfig({
       blog: {
         article: "/article",
         category: "/category",
+      },
+      mdEnhance: {
+        mathjax: true,
       },
       comment: {
         provider: "Giscus",
