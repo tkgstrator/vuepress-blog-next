@@ -11,8 +11,7 @@
     "predeploy": "yarn build"
   },
   "engines": {
-    "node": ">=18.0.0",
-    "yarn": ">=2.0"
+    "node": ">=18.0.0"
   },
   "devDependencies": {
     "@vue/server-renderer": "^3.3.8",
@@ -21,6 +20,7 @@
     "vuepress": "2.0.0-rc.0",
     "vuepress-theme-hope": "2.0.0-rc.0",
     "vuepress-vite": "^2.0.0-rc.0",
-    "wrangler": "^3.1.0"
-  }
+    "wrangler": "^3.16.0"
+  },
+  "packageManager": "yarn@4.0.2"
 }
