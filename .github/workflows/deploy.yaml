@@ -24,7 +24,7 @@ jobs:
         env:
           cache-name: cache-cdk-dependency
         with:
-          path: node_modules
+          path: .yarn/cache 
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
           restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-
       
@@ -42,4 +42,4 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           projectName: tkgstrator-work-blog
           directory: docs/.vuepress/dist
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          wranglerVersion: '3'
