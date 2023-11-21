@@ -3,7 +3,7 @@ title: Discordにニンテンドースイッチの現在プレイ中のゲーム
 date: 2022-08-31
 description: 以前から改造済みスイッチでプレイ中のゲームを表示する方法はあったのですが、今回非改造機でもできるようになったので紹介します
 tag:
-  - ニンテンドースイッチ
+  - Nintendo Switch
 ---
 
 ## Discord Presence
