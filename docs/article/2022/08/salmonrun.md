@@ -4,7 +4,7 @@ date: 2022-08-25
 description: サーモンラン Next Waveの情報について紹介します。リーク情報を含むので十分ご注意ください。
 
 tag:
-  - サーモンラン
+  - Salmon Run
 ---
 
 ## サーモンラン Next Wave

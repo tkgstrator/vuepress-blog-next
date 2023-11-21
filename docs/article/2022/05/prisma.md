@@ -2,10 +2,10 @@
 title: Prismaの使い方を学ぶ
 date: 2022-05-08
 tag:
-  - プログラミング
+  - Programming
   - Typescript
   - NodeJS
-  - PostgresSQL
+  - PostgreSQL
   - Prisma
 ---
 
@@ -21,11 +21,11 @@ NodeJS でデータベースを扱うには GraphQL や Prisma や TypeORM な�
 
 TypeORM はちょっと触ったのですが、定義がややこしかったので Prisma の方が個人的には触りやすい気がしています。
 
-## PostgresSQL
+## PostgreSQL
 
-Prisma はデータベースなら大体なんでも対応しているのですが、今回は PostgresSQL を選択しました。理由は単純で、PostgresSQL ならデータベースで配列をネイティブサポートしているからです。MySQL だとこの辺が上手くいかなかったりなんだったりなので。
+Prisma はデータベースなら大体なんでも対応しているのですが、今回は PostgreSQL を選択しました。理由は単純で、PostgreSQL ならデータベースで配列をネイティブサポートしているからです。MySQL だとこの辺が上手くいかなかったりなんだったりなので。
 
-ただ、PostgresSQL だとインサート失敗したときに Auto increment が勝手に上がってしまって歯抜けになってしまうので、しっかりとインサートできるかどうかのチェックは行わなければいけません。ロールバックしても AI の値はロールバックされないらしいので余計にめんどくさい。
+ただ、PostgreSQL だとインサート失敗したときに Auto increment が勝手に上がってしまって歯抜けになってしまうので、しっかりとインサートできるかどうかのチェックは行わなければいけません。ロールバックしても AI の値はロールバックされないらしいので余計にめんどくさい。
 
 ## 環境構築
 
@@ -76,7 +76,7 @@ POSTGRES_DB=prisma
 
 ここまでできれば`yarn install`として必要パッケージをインストールしましょう。
 
-データベースに接続したいのであれば`make up`として PostgresSQL を立ち上げておきます。
+データベースに接続したいのであれば`make up`として PostgreSQL を立ち上げておきます。
 
 この状態で`yarn start:dev`とすればローカルサーバが立ち上がります。
 
