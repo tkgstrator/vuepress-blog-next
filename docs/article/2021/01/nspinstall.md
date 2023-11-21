@@ -4,7 +4,6 @@ date: 2021-01-17
 category: Hack
 tag:
   - CFW
-  - NSP
 ---
 
 ## NSP をダンプしよう

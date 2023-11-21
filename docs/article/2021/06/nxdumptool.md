@@ -5,7 +5,6 @@ description: NXDumpToolの使い方です
 category: Hack
 tag:
   - CFW
-  - NSP
 ---
 
 # [NXDumpTool](https://github.com/DarkMatterCore/nxdumptool)
