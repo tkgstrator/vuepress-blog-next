@@ -1,5 +1,5 @@
 ---
-title: "[IPSwitch] 誰でもできるコード開発 #2"
+title: "誰でもできるコード開発 #2"
 date: 2019-05-09
 description: 任意の値をレジスタにセットして、反映させるための方法を学びます
 category:
@@ -10,13 +10,13 @@ tag:
   - IPSwitch
 ---
 
-# [IPSwitch] 誰でもできるコード開発 #2
+# 誰でもできるコード開発 #2
 
 ## はじめに
 
 今回の内容は以下の記事の続きになります。
 
-[[IPSwitch] 誰でもできるコード開発 #1](https://tkgstrator.work/posts/2019/05/01/ipswitch01.html)
+[誰でもできるコード開発 #1](https://tkgstrator.work/posts/2019/05/01/ipswitch01.html)
 
 この記事を読むにあたって必ず目を通して理解しておいてください。
 
