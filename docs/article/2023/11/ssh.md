@@ -67,6 +67,8 @@ PermitEmptyPasswords no
 
 `systemctl restart sshd`で設定を反映させましょう。
 
+> macOSの場合は`sudo launchctl kickstart -k system/com.openssh.sshd`でいけます
+
 [Linode で仮想マシンを作ったらまずやること](https://qiita.com/tarooishi/items/5f8ec51323eeed919818)のように StackScripts を作成してしまっても良いです。
 
 `sudo apt install sshguard`を入れておくとログイン試行してくる人を BAN できるのでより安全になります。
