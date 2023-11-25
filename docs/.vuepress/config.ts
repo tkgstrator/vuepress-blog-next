@@ -57,6 +57,7 @@ export default defineUserConfig({
       },
       mdEnhance: {
         mathjax: true,
+        mermaid: true
       },
       comment: {
         provider: "Giscus",
