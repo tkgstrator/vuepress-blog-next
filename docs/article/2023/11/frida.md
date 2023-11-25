@@ -47,6 +47,8 @@ Sideload Spooferだけはよく分からなかったのですが、チェック�
 
 解析するにあたってコンソールを二つ開く必要があります。ひょっとしたら一つでもできるかもしれないのですが、わかりません。
 
+#### コンソール1
+
 ```zsh
 frida -Uf com.nintendo.znca
      ____
@@ -67,7 +69,7 @@ Spawned `com.nintendo.znca`. Resuming main thread!
 
 一つ目を起動しただけだと無限にフリーズするので二つ目のコンソールからObjectionを実行します。
 
-# コンソール2
+#### コンソール2
 
 ```
 objection explore
