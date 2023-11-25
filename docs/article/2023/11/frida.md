@@ -37,7 +37,7 @@ Tweak Injectionがあるので`+dylib/deb/bundle`からFridaGadget.dylibを突�
 
 Sideload Spooferだけはよく分からなかったのですが、チェックを入れたらMobile Substrateのチェックみたいなのが入って動きませんでした。なので全部外します。
 
-`Anisette Authentication`はLocal、`Sigining Mode`はApple Id SideloadにしてStartを押します。
+`Anisette Authentication`はLocal、`Signing Mode`はApple Id SideloadにしてStartを押します。
 
 インストールができます。
 
