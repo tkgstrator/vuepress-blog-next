@@ -344,7 +344,85 @@ onLeave(log, retval, state) {
 
 メソッドが常にFalseを返すのでTrueを返すようにしなさいという問題です。
 
+```zsh
+                     -[VulnerableVault hasWon]:
+0000000100005d4c         mov        w0, #0x0
+0000000100005d50         ret
+```
 
+このメソッドは常に0を返すだけです。
+
+引数がないのでやはり`onEnter`を弄る意味はなく、返り値を変更するので`onLeave`を調整します。
+
+#### ptr('0x1')
+
+```ts
+function solve106() {
+    const method = VulnerableVault['- hasWon'];
+    Interceptor.attach(method.implementation, {
+        onLeave: function (retval) {
+            retval = ptr('0x1');
+        }
+    })
+}
+```
+
+さっきと同じように書き換えればよいかと思うのですが、これは正しく動きません。
+
+#### ptr(0x1)
+
+```ts
+function solve106() {
+    const method = VulnerableVault['- hasWon'];
+    Interceptor.attach(method.implementation, {
+        onLeave: function (retval) {
+            retval = ptr(0x1);
+        }
+    })
+}
+```
+
+こちらも同様です。
+
+#### replace(ptr(0x1))
+
+```ts
+function solve106() {
+    const method = VulnerableVault['- hasWon'];
+    Interceptor.attach(method.implementation, {
+        onLeave: function (retval) {
+            retval.replace(ptr(0x1));
+        }
+    })
+}
+```
+
+失敗します。
+
+#### replace(ptr('0x1'))
+
+```ts
+function solve106() {
+    const method = VulnerableVault['- hasWon'];
+    Interceptor.attach(method.implementation, {
+        onLeave: function (retval) {
+            retval.replace(ptr('0x1'));
+        }
+    })
+}
+```
+
+これで正常に返り値を変更できます。
+
+#### 別解について
+
+静的解析から単に0x1を返せばよいのはすぐに分かるので、
+
+```zsh
+00005d4c 20008052
+```
+
+とおきかえるようなコードが書けたらいいと思うのですが、そういうのはできないんでしたっけ？
 
 ### 1.07 Print return value(bytearray)
 
@@ -416,3 +494,174 @@ onLeave(log, retval, state) {
 ```
 
 すると、静的解析から得られた結果と同じ`$3cr3T8yt34rr4y`が得られました。
+
+### 1.08 Call function on object
+
+`getSelf`というメソッドを呼ぶと自分自身が返るのでVulnerableの`win()`を呼べば良いということになります。
+
+```ts
+function solve108() {
+    const method = VulnerableVault['- getself'];
+    Interceptor.attach(method.implementation, {
+        onLeave: function (retval) {
+            const object = new ObjC.Object(retval);
+            object.win();
+        }
+    })
+}
+```
+
+というわけで特に面白くもないコードになりました。
+
+### 1.09 Call function with arguments on object
+
+1.08と似た感じなのですが、`winIfFrida:and27042`を呼べとあります。
+
+これは引数が"Frida", 27042のときに成功するメソッドなので`getself`で自身を取得したときにこのメソッドを呼びます。
+
+```ts
+function solve109() {
+    const method = VulnerableVault['- getself'];
+    Interceptor.attach(method.implementation, {
+        onLeave: function (retval) {
+            const object = new ObjC.Object(retval);
+            object.winIfFrida_and27042_("Frida", 27042);
+        }
+    })
+}
+```
+
+`:`は`_`に置き換えられるらしい。なぜそうなるのかはよくわからない。
+
+### 1.10 Find HiddenVault instance
+
+```ts
+function solve110() {
+    const method = VulnerableVault['- doNothing'];
+    Interceptor.attach(method.implementation, {
+        onEnter: function (args) {
+            const HiddenVault = ObjC.classes.HiddenVault;
+            const object = ObjC.chooseSync(HiddenVault)[0]; 
+            object.win();
+        },
+    })
+}
+```
+
+メソッドの中で無関係のインスタンスを呼ぶこともできます。
+
+VulnerableVaultインスタンスから`doNothing`が呼ばれたときに`HiddenVault`のインスタンスを取得する感じです。
+
+ただ、なんでこんなコードになるのかは読んでいてもよく分からなかったです。最初のインスタンスを取ってくるのがこの感じなのかなという感じ。
+
+ちなみに`object["- win"]();`としても正しい結果が得られます。
+
+### 1.11 Call secret function of HiddenVault 
+
+1.10と似た感じですが`HiddenVault`の隠されたメソッドを呼べとあります。
+
+静的解析をすると`-[HiddenVault super_secret_function]`というのがあるのでこれのことでしょう。
+
+1.09と同じようにインスタンスがあるんだから直接呼んでしまえばいいやと思えば反応しませんでした。
+
+#### super_secret_function
+
+```ts
+function solve111() {
+    const method = VulnerableVault['- doNothing'];
+    Interceptor.attach(method.implementation, {
+        onEnter: function (args) {
+            const HiddenVault = ObjC.classes.HiddenVault;
+            const object = ObjC.chooseSync(HiddenVault)[0]; 
+            object.super_secret_function();
+        },
+    })
+}
+```
+
+#### ["- HiddenVault super_secret_function"]
+
+こちらだと動きます。何故なんでしょうか。
+
+```ts
+function solve111() {
+    const method = VulnerableVault['- doNothing'];
+    Interceptor.attach(method.implementation, {
+        onEnter: function (args) {
+            const HiddenVault = ObjC.classes.HiddenVault;
+            const object = ObjC.chooseSync(HiddenVault)[0];
+            object["- super_secret_function"]();
+        },
+    })
+}
+```
+
+> 関数名にアンダーバーがついていると`:`を置換したときの`_`と区別がつかないからなのではないかと思い始めてきました。
+
+こちらの方法で呼ぶ方が確実そうな気がします。
+
+### 1.12 Modify ByteArray
+
+ByteArrayで返ってくる値のうち42より大きい値を42にして返せとあります。
+
+```ts
+function solve112() {
+    const method = VulnerableVault['- generateNumbers'];
+    Interceptor.attach(method.implementation, {
+        onLeave: function (retval) {
+            const object = new ObjC.Object(retval);
+        }
+    })
+}
+```
+
+これでオブジェクト自体は取ってこれるのですが、中身の値を入れ替えようとするとobjectの中身をすべて見ておきかえる必要があります。
+
+#### 配列の長さの取得
+
+```ts
+// TypeError: not a function
+object.length();
+```
+
+とでて中身が取得できません。というのもこのオブジェクトはただの配列だからです。Objective-Cには`length`というメソッドがないので取ってこれません。
+
+1.07で`length()`で取ってこれたのはByteArrayだったからです。今回のは`NSMutableArray`なのでそのメソッドがないというわけです。
+
+#### [NSMutableArray](https://developer.apple.com/documentation/foundation/nsmutablearray)
+
+NSMutableArrayはArrayの継承クラスなので`count`などが使えます。
+
+よって`object.count()`を使いましょう。
+
+#### 配列の中身
+
+`object[i]`のような感じでインデックスを使ってアクセスしたくなりますがこのコード自体はJavascriptのものなのでデータが取れません。やっても`undefined`が返ってくるだけです。
+
+配列の中身を参照したければ`object[- objectAtIndex:](i)`とすればよいです。
+
+```ts
+function solve112() {
+    const method = VulnerableVault['- generateNumbers'];
+    Interceptor.attach(method.implementation, {
+        onLeave: function (retval) {
+            const object = new ObjC.Object(retval);
+            for(let i = 0; i < object.count(); i++) {
+                if (object["- objectAtIndex:"](i) >= 42) {
+                    object["- setObject:atIndex:"](42, i);
+                }
+            }
+        }
+    })
+}
+```
+
+多分だけれど`forEach`みたいな高級なメソッドは使えないです。
+
+## まとめ
+
+今回はチュートリアルのBasicの12問について簡単に解説しました。
+
+自分も知らないことがあって勉強になりました。
+
+記事は以上。
