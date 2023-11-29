@@ -2,8 +2,7 @@
 author: tkgling
 title: えむいーさんについて
 description: お仕事の依頼などの真面目なページです
-star: true
-timeline: true
+date: 2038-12-31
 ---
 
 ## 運営しているサービス/開発したツール
