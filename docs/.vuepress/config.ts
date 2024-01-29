@@ -42,6 +42,7 @@ export default defineUserConfig({
     editLink: true,
     hostname: "https://tkgstrator.work",
     author: "tkgling",
+    navbar: [],
     plugins: {
       copyCode: {
         showInMobile: false,
@@ -57,7 +58,7 @@ export default defineUserConfig({
       },
       mdEnhance: {
         mathjax: true,
-        mermaid: true
+        mermaid: true,
       },
       comment: {
         provider: "Giscus",
@@ -72,10 +73,10 @@ export default defineUserConfig({
     },
     blog: {
       sidebarDisplay: "none",
-      articlePerPage: 10,
+      articlePerPage: 5,
       avatar: "/ico_ep2_01.webp",
       name: "えいむーと愉快な仲間たち",
-      description: "最近どうもやる気がでません",
+      description: "逆転裁判をクリアしてしまいました......",
       roundAvatar: true,
       medias: {
         GitHub: "https://github.com/tkgstrator",

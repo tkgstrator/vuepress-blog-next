@@ -44,7 +44,7 @@ macOS ユーザーであれば`palera1n-macos-universal`を使っておけば良
 sudo /bin/sh -c "$(curl -fsSL https://static.palera.in/scripts/install.sh)"
 ```
 
-俗に言う Rootless 脱獄で、その名の通り root 権限を持たないものになります。
+俗に言う Rootless 脱獄で、その名の通り rootFSを読み込み専用でマウントするモードです。
 
 こちらは必要ではないので今回は紹介しません。
 
