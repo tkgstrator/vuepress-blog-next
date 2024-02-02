@@ -77,6 +77,8 @@ Sideloadをサービス化して展開しているappdb.toの公式アカウン�
   - もし家族や友人と使いたいなどでデバイスが五台以上あるなら割り勘して素直に開発者アカウントを取ると良い
 - [appdb.to](https://appdb.to/)のアカウント
 
+> 代わりに[GitHub](https://github.com/n3d1117/appdb)のこれでもいけるかも、試してないけど
+
 以下、BHTwitterでやってみた内容をメモ。
 
 公式サイトの[該当ページ](https://appdb.to/my/configure)に移動し`Ask for options during installation requests?`を有効化する。
