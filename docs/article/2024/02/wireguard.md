@@ -68,8 +68,8 @@ services:
       - WG_CONF_TEMPLATE
       - WGUI_MANAGE_START=true
       - WGUI_MANAGE_RESTART=true
-      - WGUI_SERVER_POST_UP_SCRIPT=iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o wlp2s0 -j MASQUERADE
-      - WGUI_SERVER_POST_DOWN_SCRIPT=iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o wlp2s0 -j MASQUERADE
+      - WGUI_SERVER_POST_UP_SCRIPT=iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+      - WGUI_SERVER_POST_DOWN_SCRIPT=iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
     logging:
       driver: json-file
       options:
@@ -129,7 +129,7 @@ fi
 
 このファイルについては`chmod +x healthcheck.sh`で実行権限をつけておくこと。
 
-## ディレクトリ構造
+### ディレクトリ構造
 
 `docker compose up -d`で起動すると以下のように勝手にディレクトリが作成されます。
 
@@ -152,3 +152,17 @@ fi
 ├── .env
 └── docker-compose.yaml
 ```
+
+### ポート開放
+
+ポート開放は必須です。
+
+51820がwireguardが起動しているサーバーに対して向くようにポートフォワードしてやりましょう。
+
+## 起動
+
+あとはこの状態で起動すれば`wireguard > wireguard-ui > cloudflared`の順に立ち上がり、`service_healthy`のおかげでwireguardが立ち上がるまでwireguard-uiの起動を待ってくれます。
+
+やったね！
+
+記事は以上。
